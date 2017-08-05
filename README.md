@@ -3,9 +3,7 @@ Men's College Basketball Play by Play Data
 
 __NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. To get a particular team's play by play data, call
 
-```
-get_pbp(team)
-```
+```get_pbp(team)```
 Note that team names must adhere to ESPN naming conventions. A full dictionary of team names used by ESPN is created in the __ids__ data frame in the script.
 
 __2016_17_pbp/:__ A folder containing play by play csv files for each team for the 2016-17 season. Additionally, the file __all_games.csv__ contains all games scraped for the 2016-17 season. Each .csv file contains the following variables:
