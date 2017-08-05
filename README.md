@@ -8,7 +8,7 @@ get_pbp(team)
 ```
 Note that team names must adhere to ESPN naming conventions. A full dictionary of team names used by ESPN is created in the __ids__ data frame in the script.
 
-__2016_17_pbp/:__ A folder containing play by play csv files for each teams for the 2016-17 season. Each .csv file contains the following variables:
+__2016_17_pbp/:__ A folder containing play by play csv files for each team for the 2016-17 season. Additionally, the file __all_games.csv__ contains all games scraped for the 2016-17 season. Each .csv file contains the following variables:
    * __play_id__: The index of a play in a given game
    * __half:__ Overtimes denoted by 3, 4, etc.
    * __time_remaining_half:__ Time left in a given period of play, as it would appear on a scoreboard.
