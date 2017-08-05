@@ -167,5 +167,12 @@ get_pbp <- function(team) {
 for(k in 1:351) {
   data <- get_pbp(ids$team[k])
   write.table(data, paste("pbp_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  
+  if(k == 1){
+    season <- data
+  }else{
+    season <- rbind(season, data)
+  }
 }
 
+write.table(season, "pbp_2016_17/all_games.csv", row.names = F, col.names = T)
