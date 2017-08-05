@@ -68,7 +68,7 @@ get_pbp <- function(team) {
     tmp <- try(readHTMLTable(url), silent = T)
     
     ### Check if PBP Data is Available
-    if(length(tmp) < ncol(tmp[[1]])) {
+    if(length(tmp) < ncol(tmp[[1]]) | length(tmp) == 0) {
       print("Play by Play Data Not Available")
       next
     }
