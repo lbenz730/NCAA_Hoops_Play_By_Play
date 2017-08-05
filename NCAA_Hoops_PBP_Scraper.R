@@ -175,4 +175,4 @@ for(k in 1:351) {
   }
 }
 
-write.table(season, "pbp_2016_17/all_games.csv", row.names = F, col.names = T)
+write.table(season, "pbp_2016_17/all_games.csv", row.names = F, col.names = T, sep = ",")
