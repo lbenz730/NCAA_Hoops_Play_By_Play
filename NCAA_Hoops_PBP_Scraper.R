@@ -179,7 +179,7 @@ for(k in 1:351) {
   data <- get_pbp(ids$team[k])
   write.table(data, paste("pbp_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
   roster <- get_roster(ids$team[k])
-  write.table(data, paste("rosters_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  write.table(roster, paste("rosters_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
   
   
   if(k == 1){
