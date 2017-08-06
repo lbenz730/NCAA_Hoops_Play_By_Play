@@ -163,10 +163,24 @@ get_pbp <- function(team) {
   return(pbp_season)
 }
 
+get_roster <- function(team) {
+  print(paste("Getting Roster: ", team, sep = ""))
+  base_url <- "http://www.espn.com/mens-college-basketball/team/roster/_/id/"
+  url <-  paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
+  tmp <- readHTMLTable(url)
+  tmp <- as.data.frame(tmp[[1]][-1,])
+  names(tmp) <- c("Number", "Name", "Position", "Height", "Weight", "Class", "Hometown")
+  return(tmp)
+}
+
+
 ### Get all of 2016/17 Data
 for(k in 1:351) {
   data <- get_pbp(ids$team[k])
   write.table(data, paste("pbp_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  roster <- get_roster(ids$team[k])
+  write.table(data, paste("rosters_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  
   
   if(k == 1){
     season <- data
