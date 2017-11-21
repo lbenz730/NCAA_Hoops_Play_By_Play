@@ -85,7 +85,7 @@ get_pbp <- function(team) {
     }
     
     ### 1 OT
-    if(ncol(tmp[[1]]) == 5) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 6) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 1)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 1)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 1)
@@ -93,7 +93,7 @@ get_pbp <- function(team) {
     }
     
     ### 2 OT
-    if(ncol(tmp[[1]]) == 6) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 7) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 2)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 2)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 2)
@@ -102,7 +102,7 @@ get_pbp <- function(team) {
     }
     
     ### 3 OT
-    if(ncol(tmp[[1]]) == 7) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 8) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 3)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 3)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 3)
@@ -112,7 +112,7 @@ get_pbp <- function(team) {
     }
     
     ### 4 OT
-    if(ncol(tmp[[1]]) == 8) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 9) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 4)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 4)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 4)
@@ -204,7 +204,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 1 OT
-    if(ncol(tmp[[1]]) == 5) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 6) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 1)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 1)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 1)
@@ -212,7 +212,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 2 OT
-    if(ncol(tmp[[1]]) == 6) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 7) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 2)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 2)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 2)
@@ -221,7 +221,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 3 OT
-    if(ncol(tmp[[1]]) == 7) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 8) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 3)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 3)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 3)
@@ -231,7 +231,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 4 OT
-    if(ncol(tmp[[1]]) == 8) {
+    if(ncol(tmp[[1]]) == 5 & length(tmp) == 9) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 4)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 4)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 4)
@@ -278,18 +278,18 @@ get_pbp_game <- function(gameIDs) {
 }
 
 ### Get all of 2017/18 Data
-for(k in 1:351) {
-  data <- get_pbp(ids$team[k])
-  write.table(data, paste("pbp_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
-  roster <- get_roster(ids$team[k])
-  write.table(roster, paste("rosters_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
-  
-  
-  if(k == 1){
-    season <- data
-  }else{
-    season <- rbind(season, data)
-  }
-}
-
-write.table(season, "pbp_2017_18/all_games.csv", row.names = F, col.names = T, sep = ",")
+# for(k in 1:351) {
+#   data <- get_pbp(ids$team[k])
+#   write.table(data, paste("pbp_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+#   roster <- get_roster(ids$team[k])
+#   write.table(roster, paste("rosters_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+#   
+#   
+#   if(k == 1){
+#     season <- data
+#   }else{
+#     season <- rbind(season, data)
+#   }
+# }
+# 
+# write.table(season, "pbp_2017_18/all_games.csv", row.names = F, col.names = T, sep = ",")
