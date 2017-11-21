@@ -91,7 +91,7 @@ get_line <- function(data) {
 
 wp_chart <- function(gameID, home_col, away_col) {
   ### Scrape Data from ESPN
-  data <- get_pbp_game(400999664)
+  data <- get_pbp_game(gameID)
   
   ### Cleaning
   data$scorediff <- data$home_score - data$away_score
@@ -131,3 +131,5 @@ wp_chart <- function(gameID, home_col, away_col) {
   }
 }
 
+### Usage
+wp_chart(260600245, "maroon", "orange")
