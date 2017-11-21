@@ -118,8 +118,8 @@ get_pbp <- function(team) {
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 4)
       half_4 <- clean(as.data.frame(tmp[[5]]), 4, 4)
       half_5 <- clean(as.data.frame(tmp[[6]]), 5, 4)
-      half_6 <- clean(as.data.frame(tmp[[7]]), 5, 4)
-      pbp <- rbind(half_1, half_2, half_3, half_4, half_6)
+      half_6 <- clean(as.data.frame(tmp[[7]]), 6, 4)
+      pbp <- rbind(half_1, half_2, half_3, half_4, half_5, half_6)
     }
     
     these <- grep(T, is.na(pbp$home_score))
@@ -237,8 +237,8 @@ get_pbp_game <- function(gameIDs) {
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 4)
       half_4 <- clean(as.data.frame(tmp[[5]]), 4, 4)
       half_5 <- clean(as.data.frame(tmp[[6]]), 5, 4)
-      half_6 <- clean(as.data.frame(tmp[[7]]), 5, 4)
-      pbp <- rbind(half_1, half_2, half_3, half_4, half_6)
+      half_6 <- clean(as.data.frame(tmp[[7]]), 6, 4)
+      pbp <- rbind(half_1, half_2, half_3, half_4, half_5, half_6)
     }
     
     these <- grep(T, is.na(pbp$home_score))
