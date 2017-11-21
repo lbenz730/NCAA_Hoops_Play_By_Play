@@ -160,6 +160,7 @@ get_pbp <- function(team) {
       pbp_season <- rbind(pbp_season, pbp)
     }
   }
+  write.table(pbp_season, paste("pbp_2017_18/", gsub(" ", "_", team), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
   return(pbp_season)
 }
 
@@ -173,13 +174,115 @@ get_roster <- function(team) {
   return(tmp)
 }
 
+get_pbp_game <- function(gameIDs) {
+  
+  ### Get Play by Play Data 
+  base_url <- "http://www.espn.com/mens-college-basketball/playbyplay?gameId="
+  summary_url <- "http://www.espn.com/mens-college-basketball/game?gameId="
+  j <- 0
+  
+  for(i in 1:length(gameIDs)) {
+    print(paste(" Game: ", i, "/", length(gameIDs), sep = ""))
+    url <- paste(base_url, gameIDs[i], sep = "")
+    tmp <- try(readHTMLTable(url), silent = T)
+    
+    ### Check if PBP Data is Available
+    if(length(tmp) < ncol(tmp[[1]]) | length(tmp) == 0) {
+      print("Play by Play Data Not Available")
+      next
+    }
+    else{
+      j <- j + 1
+    }
+    
+    
+    ### 0 OT
+    if(ncol(tmp[[1]]) == 4) {
+      half_1 <- clean(as.data.frame(tmp[[2]]), 1, 0)
+      half_2 <- clean(as.data.frame(tmp[[3]]), 2, 0)
+      pbp <- rbind(half_1, half_2)
+    }
+    
+    ### 1 OT
+    if(ncol(tmp[[1]]) == 5) {
+      half_1 <- clean(as.data.frame(tmp[[2]]), 1, 1)
+      half_2 <- clean(as.data.frame(tmp[[3]]), 2, 1)
+      half_3 <- clean(as.data.frame(tmp[[4]]), 3, 1)
+      pbp <- rbind(half_1, half_2, half_3)
+    }
+    
+    ### 2 OT
+    if(ncol(tmp[[1]]) == 6) {
+      half_1 <- clean(as.data.frame(tmp[[2]]), 1, 2)
+      half_2 <- clean(as.data.frame(tmp[[3]]), 2, 2)
+      half_3 <- clean(as.data.frame(tmp[[4]]), 3, 2)
+      half_4 <- clean(as.data.frame(tmp[[5]]), 4, 2)
+      pbp <- rbind(half_1, half_2, half_3, half_4)
+    }
+    
+    ### 3 OT
+    if(ncol(tmp[[1]]) == 7) {
+      half_1 <- clean(as.data.frame(tmp[[2]]), 1, 3)
+      half_2 <- clean(as.data.frame(tmp[[3]]), 2, 3)
+      half_3 <- clean(as.data.frame(tmp[[4]]), 3, 3)
+      half_4 <- clean(as.data.frame(tmp[[5]]), 4, 3)
+      half_5 <- clean(as.data.frame(tmp[[6]]), 5, 3)
+      pbp <- rbind(half_1, half_2, half_3, half_4, half_5)
+    }
+    
+    ### 4 OT
+    if(ncol(tmp[[1]]) == 8) {
+      half_1 <- clean(as.data.frame(tmp[[2]]), 1, 4)
+      half_2 <- clean(as.data.frame(tmp[[3]]), 2, 4)
+      half_3 <- clean(as.data.frame(tmp[[4]]), 3, 4)
+      half_4 <- clean(as.data.frame(tmp[[5]]), 4, 4)
+      half_5 <- clean(as.data.frame(tmp[[6]]), 5, 4)
+      half_6 <- clean(as.data.frame(tmp[[7]]), 5, 4)
+      pbp <- rbind(half_1, half_2, half_3, half_4, half_6)
+    }
+    
+    these <- grep(T, is.na(pbp$home_score))
+    pbp[these, c("home_score", "away_score")] <- pbp[these - 1 , c("home_score", "away_score")]
+    
+    ### Get full team names 
+    url2 <- paste(summary_url, gameIDs[i], sep = "")
+    tmp <- readHTMLTable(url2)
+    pbp$away <- as.character(as.data.frame(tmp[[2]])[1,1])
+    pbp$home <- as.character(as.data.frame(tmp[[2]])[2,1])
+    away_abv <- as.character(as.data.frame(tmp[[1]])[1,1])
+    home_abv <- as.character(as.data.frame(tmp[[1]])[2,1])
+    
+    ### Get Game Line
+    y <- scan(url2, what = "", sep = "\n")
+    y <- y[grep("Line:", y)]
+    if(length(y) > 0) {
+      y <- gsub("<[^<>]*>", "", y)
+      y <- gsub("\t", "", y)
+      y <- strsplit(y, ": ")[[1]][2]
+      line <- as.numeric(strsplit(y, " ")[[1]][2])
+      abv <- strsplit(y, " ")[[1]][1]
+      if(abv == home_abv) {
+        line <- line * -1
+      }
+    }
+    else {
+      line <- NA
+    }
+    
+    pbp$home_favored_by <- line
+    pbp$play_id <- 1:nrow(pbp)
+    pbp$game_id <- gameIDs[i]
+    
+    return(pbp)
+  }
+}
 
-### Get all of 2016/17 Data
+### Get all of 2017/18 Data
 for(k in 1:351) {
   data <- get_pbp(ids$team[k])
-  write.table(data, paste("pbp_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  write.table(data, paste("pbp_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
   roster <- get_roster(ids$team[k])
-  write.table(roster, paste("rosters_2016_17/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  write.table(roster, paste("rosters_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
   
   
   if(k == 1){
@@ -189,4 +292,4 @@ for(k in 1:351) {
   }
 }
 
-write.table(season, "pbp_2016_17/all_games.csv", row.names = F, col.names = T, sep = ",")
+write.table(season, "pbp_2017_18/all_games.csv", row.names = F, col.names = T, sep = ",")
