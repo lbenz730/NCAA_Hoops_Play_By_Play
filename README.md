@@ -21,3 +21,7 @@ __Assist_Network.R:__ The function ```assist_net(team, node_col, season)```, use
 __rosters_2016_17/:__ 2016-17 rosters for each team.
 
 __rosters_2017_18/:__ 2017-18 rosters for each team.
+
+__wp_model.R:/__ Prepares data and builds win probability model (saved as object __wp_hoops.rds__). Requires[all_games.csv](https://drive.google.com/open?id=0BzSws2ZDOraxbXF0aWNJNmxCdnM).
+
+__wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(ESPN_Game_ID, home_color, away_color)```.
