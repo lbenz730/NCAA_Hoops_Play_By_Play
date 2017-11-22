@@ -3,7 +3,7 @@ library(magrittr)
 library(ggraph)
 library(igraph)
 
-assist_net <- function(team, node_col, season, games) {
+assist_net <- function(team, node_col, season, rmv_bench) {
   
   ### Read File
   if(season[1] == "2016-17") {
@@ -64,6 +64,10 @@ assist_net <- function(team, node_col, season, games) {
   
   network$a_freq <- network$num/sum(network$num)
   
+  if(rmv_bench) {
+    network <- network[network$a_freq > 0,]
+  }
+  
   net <- graph.data.frame(network, directed = F)
   deg <- degree(net, mode="all")
   E(net)$weight <- network$num
@@ -72,6 +76,7 @@ assist_net <- function(team, node_col, season, games) {
   E(net)$width <- E(net)$weight * factor
   V(net)$color <- node_col
   plot(net, vertex.label.color= "black", vertex.label.cex = 0.5, 
+       layout=layout_in_circle,
        vertex.label.family = "Arial Black", main = paste(team, text, sep = ""))                      
   
 }
