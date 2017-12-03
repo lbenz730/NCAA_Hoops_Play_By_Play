@@ -1,6 +1,9 @@
+### NCAA Hoops PBP Scraper
+### Luke Benz
+### Version 1.3
+
 library(XML)
 library(dplyr)
-library(magrittr)
 
 ### Function to clean PBP data
 clean <- function(data, half, OTs) {
@@ -182,7 +185,7 @@ get_pbp_game <- function(gameIDs) {
   j <- 0
   
   for(i in 1:length(gameIDs)) {
-    print(paste(" Game: ", i, "/", length(gameIDs), sep = ""))
+    print(paste("Game: ", i, "/", length(gameIDs), sep = ""))
     url <- paste(base_url, gameIDs[i], sep = "")
     tmp <- try(readHTMLTable(url), silent = T)
     

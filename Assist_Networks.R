@@ -1,6 +1,7 @@
-library(dplyr)
-library(magrittr)
-library(ggraph)
+### NCAA Assist Networks
+### Luke Benz
+### Version 1.3 (Updated 12.3.17)
+
 library(igraph)
 
 assist_net <- function(team, node_col, season, rmv_bench) {
@@ -8,22 +9,27 @@ assist_net <- function(team, node_col, season, rmv_bench) {
   ### Read File
   if(season[1] == "2016-17") {
     x <- read.csv(paste("pbp_2016_17/", team, ".csv", sep = ""), as.is = T)
-    text <- " Assist Flow Chart for 2017-18 Returning Players"
+    text <- " Assist Network for 2017-18 Returning Players"
     factor <- 1.25
-  }
-  else if(season[1] == "2017-18") {
-    x <- read.csv(paste("pbp_2017_18/", team, ".csv", sep = ""), as.is = T)
-    text <- " Assist Flow Chart for 2017-18 Season"
-    factor <- 3
-  }
-  else {
+  }else if(season[1] == "2017-18") {
+    x <- suppressWarnings(try(read.csv(paste("pbp_2017_18/", team, ".csv", sep = ""), 
+                                       as.is = T), silent = T))
+    if(class(x) == "try-error") {
+      x <- get_pbp(team)
+    }
+    text <- " Assist Network for 2017-18 Season"
+    factor <- 1.75
+  }else {
     x <- get_pbp_game(season)
     opp <- setdiff(c(x$away, x$home), team)
-    text <- paste(" Assist Flow Chart vs. ", opp, sep = "")
+    text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)
     factor <- 5
   }
+  
+  ### Get Roster
   roster <- read.csv(paste("rosters_2017_18/", team, ".csv", sep = ""), as.is = T)
+  roster$Name <- gsub(" Jr.", "", roster$Name)
   games <- unique(x$game_id)
   ast <- grep("Assisted", x$description)
   x <- x[ast, ]
@@ -67,6 +73,8 @@ assist_net <- function(team, node_col, season, rmv_bench) {
   if(rmv_bench) {
     network <- network[network$a_freq > 0,]
   }
+  ast_data <- aggregate(a_freq ~ ast, data = network, sum)
+  shot_data <- aggregate(a_freq ~ shot, data = network, sum)
   
   net <- graph.data.frame(network, directed = F)
   deg <- degree(net, mode="all")
@@ -77,7 +85,10 @@ assist_net <- function(team, node_col, season, rmv_bench) {
   V(net)$color <- node_col
   plot(net, vertex.label.color= "black", vertex.label.cex = 0.5, 
        layout=layout_in_circle,
-       vertex.label.family = "Arial Black", main = paste(team, text, sep = ""))                      
+       vertex.label.family = "Arial Black", main = paste(team, text, sep = ""))  
   
+  stat <- round(transitivity(net, type = "global"), 3)
+  print(paste("Clustering Coefficient: ", stat))
+  return(stat)
 }
 
