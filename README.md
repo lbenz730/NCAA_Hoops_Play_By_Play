@@ -18,6 +18,7 @@ __Assist_Network.R:__ The function ```assist_net(team, node_col, season, rmv_ben
   * ```node_col``` is the node color for the graph
   * ```season```: Options include "2016-17", "2017-18", or a vector of ESPN game IDs. 
   * ```rmv_bench```: If TRUE, removes all players who aren't in the network. 
+  * ```tree```: If TRUE, draws graph in tree structure. If FALSE, draws graph in circle
 
 __rosters_2016_17/:__ 2016-17 rosters for each team.
 
