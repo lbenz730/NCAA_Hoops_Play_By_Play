@@ -1,10 +1,10 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 1.3 (Updated 12.3.17)
+### Version 1.4 (Updated 12.16.17)
 
 library(igraph)
 
-assist_net <- function(team, node_col, season, rmv_bench) {
+assist_net <- function(team, node_col, season, rmv_bench, tree) {
   
   ### Read File
   if(season[1] == "2016-17") {
@@ -83,8 +83,9 @@ assist_net <- function(team, node_col, season, rmv_bench) {
   E(net)$edge.color <- "white"
   E(net)$width <- E(net)$weight * factor
   V(net)$color <- node_col
-  plot(net, vertex.label.color= "black", vertex.label.cex = 0.5, 
-       layout=layout_in_circle,
+  
+  plot(net, vertex.label.color= "black", vertex.label.cex = 0.5,
+       layout= ifelse(tree, layout_as_tree,layout_in_circle),
        vertex.label.family = "Arial Black", main = paste(team, text, sep = ""))  
   
   stat <- round(transitivity(net, type = "global"), 3)
