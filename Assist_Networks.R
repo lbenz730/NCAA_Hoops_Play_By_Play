@@ -5,8 +5,7 @@
 library(igraph)
 
 assist_net <- function(team, node_col, season, rmv_bench, tree) {
-  
-  ### Read File
+  ### Read Play-by-Play File
   if(season[1] == "2016-17") {
     x <- read.csv(paste("pbp_2016_17/", team, ".csv", sep = ""), as.is = T)
     text <- " Assist Network for 2017-18 Returning Players"
@@ -33,7 +32,6 @@ assist_net <- function(team, node_col, season, rmv_bench, tree) {
   games <- unique(x$game_id)
   ast <- grep("Assisted", x$description)
   x <- x[ast, ]
-  
   
   ### Get Ast/Shot from ESPN Play Description
   splitplay <- function(description) {
@@ -70,12 +68,16 @@ assist_net <- function(team, node_col, season, rmv_bench, tree) {
   
   network$a_freq <- network$num/sum(network$num)
   
+  ### Remove Bench
   if(rmv_bench) {
     network <- network[network$a_freq > 0,]
   }
+  
+  ### Team Ast/Shot Distributions
   ast_data <- aggregate(a_freq ~ ast, data = network, sum)
   shot_data <- aggregate(a_freq ~ shot, data = network, sum)
   
+  ### Create Network
   net <- graph.data.frame(network, directed = F)
   deg <- degree(net, mode="all")
   E(net)$weight <- network$num
@@ -84,12 +86,14 @@ assist_net <- function(team, node_col, season, rmv_bench, tree) {
   E(net)$width <- E(net)$weight * factor
   V(net)$color <- node_col
   
+  ### Plot Network
   plot(net, vertex.label.color= "black", vertex.label.cex = 0.5,
        layout= ifelse(tree, layout_as_tree,layout_in_circle),
        vertex.label.family = "Arial Black", main = paste(team, text, sep = ""))  
   
-  stat <- round(transitivity(net, type = "global"), 3)
-  print(paste("Clustering Coefficient: ", stat))
-  return(stat)
+  ### Compute and Return Clustering Coefficient
+  clust_coeff <- round(transitivity(net, type = "global"), 3)
+  print(paste("Clustering Coefficient: ", clust_coeff))
+  return(clust_coeff)
 }
 
