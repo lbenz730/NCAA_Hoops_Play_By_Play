@@ -20,7 +20,7 @@ __Assist_Network.R:__ The function ```assist_net(team, node_col, season, rmv_ben
   * ```rmv_bench```: Logical. If TRUE, removes all players who aren't in the network. 
   * ```tree```: Logical. If TRUE, draws graph in tree structure. If FALSE, draws graph in circle
   * ```three_weights```: Logical. If TRUE, assisted three point shots are given 1.5 weight. If FALSE, assisted three point shots are given weight 1. In both cases, assisted 2 point shots are given weight 1. 
-
+  
 __rosters_2016_17/:__ 2016-17 rosters for each team.
 
 __rosters_2017_18/:__ 2017-18 rosters for each team.
@@ -28,3 +28,18 @@ __rosters_2017_18/:__ 2017-18 rosters for each team.
 __wp_model.R:/__ Prepares data and builds win probability model (saved as object __wp_hoops.rds__). Requires [all_games.csv](https://drive.google.com/open?id=0BzSws2ZDOraxbXF0aWNJNmxCdnM).
 
 __wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(ESPN_Game_ID, home_color, away_color)```.
+
+# Examples
+### Assist Networks
+* Weighted Assist Network
+![Yale Weighted Assist Network](pics/Yale_Weighted_Network.png)
+```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = F, three_weights = T```
+
+* Tree Assist Network
+![Yale Tree Assist Network](pics/Yale_Tree.png)
+```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = T, three_weights = F```
+
+### Win Probability Charts
+* Texas A&M vs. Northern Iowa, March 20, 2016
+![Texas A&M vs. Northern Iowa, March 20, 2016](pics/WinProb.png)
+```wp_chart(400872229, "maroon", "purple")```
