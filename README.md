@@ -17,8 +17,9 @@ __Assist_Network.R:__ The function ```assist_net(team, node_col, season, rmv_ben
   * ```team``` is the ESPN team name
   * ```node_col``` is the node color for the graph
   * ```season```: Options include "2016-17", "2017-18", or a vector of ESPN game IDs. 
-  * ```rmv_bench```: If TRUE, removes all players who aren't in the network. 
-  * ```tree```: If TRUE, draws graph in tree structure. If FALSE, draws graph in circle
+  * ```rmv_bench```: Logical. If TRUE, removes all players who aren't in the network. 
+  * ```tree```: Logical. If TRUE, draws graph in tree structure. If FALSE, draws graph in circle
+  * ```three_weights```: Logical. If TRUE, assisted three point shots are given 1.5 weight. If FALSE, assisted three point shots are given weight 1. In both cases, assisted 2 point shots are given weight 1. 
 
 __rosters_2016_17/:__ 2016-17 rosters for each team.
 
