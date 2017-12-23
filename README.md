@@ -33,11 +33,11 @@ __wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(
 ### Assist Networks
 * Weighted Assist Network
 ![Yale Weighted Assist Network](pics/Yale_Weighted_Network.png)
-```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = F, three_weights = T```
+```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = F, three_weights = T)```
 
 * Tree Assist Network
 ![Yale Tree Assist Network](pics/Yale_Tree.png)
-```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = T, three_weights = F```
+```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = T, three_weights = F)```
 
 ### Win Probability Charts
 * Texas A&M vs. Northern Iowa, March 20, 2016
