@@ -18,16 +18,18 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
       x <- get_pbp(team)
     }
     text <- " Assist Network for 2017-18 Season"
-    factor <- 1.75
+    factor <- 1.25
+    x$description <- as.character(x$description)
   }else {
     x <- get_pbp_game(season)
     opp <- setdiff(c(x$away, x$home), team)
     text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)
-    factor <- 5
+    factor <- 2.5
   }
   
   ### Get Roster
+  team <- gsub(" ", "_", team)
   roster <- read.csv(paste("rosters_2017_18/", team, ".csv", sep = ""), as.is = T)
   roster$Name <- gsub(" Jr.", "", roster$Name)
   games <- unique(x$game_id)
@@ -117,7 +119,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   plot(net, vertex.label.color= "black", vertex.label.cex = 0.5,
        layout= ifelse(tree, layout_as_tree,layout_in_circle),
        vertex.label.family = "Arial Black", 
-       main = paste(team, ifelse(three_weights, " Weighted", ""), text, sep = ""))  
+       main = paste(gsub("_", " ", team), ifelse(three_weights, " Weighted", ""), text, sep = ""))  
   
   ### Add Text to Network
   text(-1.5, 1.0, paste(ifelse(three_weights, "Weighted ", ""), "Assist Frequency Leader: ", 
