@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.1 (Updated 12.23.17)
+### Version 2.1.1 (Updated 12.24.17)
 
 library(igraph)
 library(dplyr)
@@ -23,7 +23,6 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
     x$description <- as.character(x$description)
   }else {
     x <- get_pbp_game(season)
-    text_team <- dict$ESPN_PBP[dict$ESPN == team]
     opp <- setdiff(c(x$away, x$home), text_team)
     text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)
@@ -31,6 +30,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   }
   
   ### Get Roster
+  text_team <- dict$ESPN_PBP[dict$ESPN == team]
   team <- gsub(" ", "_", team)
   roster <- read.csv(paste("rosters_2017_18/", team, ".csv", sep = ""), as.is = T)
   roster$Name <- gsub(" Jr.", "", roster$Name)
