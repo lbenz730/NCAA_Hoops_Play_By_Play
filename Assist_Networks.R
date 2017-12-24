@@ -1,11 +1,12 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.0 (Updated 12.19.17)
+### Version 2.1 (Updated 12.23.17)
 
 library(igraph)
 library(dplyr)
 
 assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
+  dict <- read.csv("ESPN_NCAA_Dict.csv", as.is = T)
   ### Read Play-by-Play File
   if(season[1] == "2016-17") {
     x <- read.csv(paste("pbp_2016_17/", team, ".csv", sep = ""), as.is = T)
@@ -22,10 +23,11 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
     x$description <- as.character(x$description)
   }else {
     x <- get_pbp_game(season)
-    opp <- setdiff(c(x$away, x$home), team)
+    text_team <- dict$ESPN_PBP[dict$ESPN == team]
+    opp <- setdiff(c(x$away, x$home), text_team)
     text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)
-    factor <- 2.5
+    factor <- 3
   }
   
   ### Get Roster
@@ -119,7 +121,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   plot(net, vertex.label.color= "black", vertex.label.cex = 0.5,
        layout= ifelse(tree, layout_as_tree,layout_in_circle),
        vertex.label.family = "Arial Black", 
-       main = paste(gsub("_", " ", team), ifelse(three_weights, " Weighted", ""), text, sep = ""))  
+       main = paste(text_team, ifelse(three_weights, " Weighted", ""), text, sep = ""))  
   
   ### Add Text to Network
   text(-1.5, 1.0, paste(ifelse(three_weights, "Weighted ", ""), "Assist Frequency Leader: ", 
