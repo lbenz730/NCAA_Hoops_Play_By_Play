@@ -13,7 +13,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
     text <- " Assist Network for 2017-18 Returning Players"
     factor <- 1.25
   }else if(season[1] == "2017-18") {
-    x <- suppressWarnings(try(read.csv(paste("pbp_2017_18/", team, ".csv", sep = ""), 
+    x <- suppressWarnings(try(read.csv(paste("pbp_2017_18/", gsub(" ", "_", team), ".csv", sep = ""), 
                                        as.is = T), silent = T))
     if(class(x) == "try-error") {
       x <- get_pbp(team)
