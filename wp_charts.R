@@ -129,7 +129,13 @@ wp_chart <- function(gameID, home_col, away_col) {
     legend("left", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
            cex = 0.5)
   }
+  
+  if(max(data$winprob == 1)) { 
+    min_prob <- min(data$winprob)
+    paste("Minimum Win Probability for", data$home[1], round(min_prob, 4))
+  }
+  else{
+    min_prob <- min(1 - data$winprob)
+    paste("Minimum Win Probability for", data$away[1], round(min_prob, 4))
+  }
 }
-
-### Usage
-wp_chart(260600245, "maroon", "orange")
