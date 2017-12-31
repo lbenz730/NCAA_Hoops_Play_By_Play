@@ -1,6 +1,5 @@
 source("NCAA_Hoops_PBP_Scraper.R")
 dict <- read.csv("ESPN_NCAA_Dict.csv", as.is = T)
-#games <- read.csv("pbp_2016_17/all_games.csv", as.is = T)
 wp_hoops <- readRDS("wp_hoops.rds")
 y <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_Files/Results/2017-18/NCAA_Hoops_Results_11_19_2017.csv", 
               as.is = T)
@@ -9,6 +8,7 @@ x <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_
 z <- read.csv("pbp_2016_17/NCAA_Hoops_Results_6_29_2017.csv", as.is = T)
 prior <- glm(wins ~ predscorediff, data = z, family = binomial)
 
+### Get Approiate Model for Time Remaining
 secs_to_model <- function(sec, msec) {
   offset <- msec - 2400
   if(offset == 300 & sec > offset) {
@@ -130,12 +130,16 @@ wp_chart <- function(gameID, home_col, away_col) {
            cex = 0.5)
   }
   
+  
+  ### Min Win Prob
   if(max(data$winprob == 1)) { 
     min_prob <- min(data$winprob)
-    paste("Minimum Win Probability for", data$home[1], round(min_prob, 4))
+    min_prob <- paste("Minimum Win Probability for", data$home[1], round(min_prob, 4))
   }
   else{
     min_prob <- min(1 - data$winprob)
-    paste("Minimum Win Probability for", data$away[1], round(min_prob, 4))
+    min_prob <- paste("Minimum Win Probability for", data$away[1], round(min_prob, 4))
   }
+  
+  text(500,0, min_prob, cex = 0.8)
 }
