@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.1.2 (Updated 12.30.17)
+### Version 2.1.2 (Updated 12.31.17)
 
 library(igraph)
 library(dplyr)
@@ -24,7 +24,10 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
     factor <- 1.25
     x$description <- as.character(x$description)
   }else {
-    x <- get_pbp_game(season)
+    x <- suppressWarnings(try(get_pbp_game(season), silent = T))
+    if(class(x) == "try-error") {
+      return("Play-by-Play Data Not Available")
+    }
     opp <- setdiff(c(x$away, x$home), text_team)
     text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)

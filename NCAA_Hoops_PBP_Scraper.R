@@ -1,30 +1,9 @@
 ### NCAA Hoops PBP Scraper
 ### Luke Benz
-### Version 1.3
+### Version 1.4 (Updated 12/31/17)
 
 library(XML)
 library(dplyr)
-
-### Function to clean PBP data
-clean <- function(data, half, OTs) {
-  cleaned <- data %>% mutate(play_id = 1:nrow(data), 
-                             half = half,
-                             time_remaining_half = as.character(V1), 
-                             description = V3, 
-                             away_score = suppressWarnings(as.numeric(gsub("-.*", "", V4))),
-                             home_score = suppressWarnings(as.numeric(gsub(".*-", "", V4))))
-  cleaned$time_remaining_half[1] <- ifelse(half <= 2, "20:00", "5:00")
-  mins <- suppressWarnings(as.numeric(gsub(":.*","", cleaned$time_remaining_half)))
-  secs <- suppressWarnings(as.numeric(gsub(".*:","", cleaned$time_remaining_half)))
-  cleaned$secs_remaining <- max(20 * (2 - half), 0) * 60 + 
-    5 * 60 * max((OTs * as.numeric(half <=2)), ((OTs + 2 - half) * as.numeric(half > 2))) + 60 * mins + secs
-  if(half == 1) {
-    cleaned[1, c("home_score", "away_score")] <- c(0,0)
-  }
-  cleaned <- select(cleaned, play_id, half, time_remaining_half, secs_remaining, description,
-                    home_score, away_score) 
-  return(cleaned)
-}
 
 ### Create Team URL Dictionairy for Acquiring Team PBP Data
 teams_url <- "http://www.espn.com/mens-college-basketball/teams"
@@ -45,20 +24,36 @@ for(i in 1:length(x)) {
   ids$team[i] <- paste(y[-1], collapse = " ")
 }
 
+
+####################### Function to clean PBP data #############################
+clean <- function(data, half, OTs) {
+  cleaned <- data %>% mutate(play_id = 1:nrow(data), 
+                             half = half,
+                             time_remaining_half = as.character(V1), 
+                             description = V3, 
+                             away_score = suppressWarnings(as.numeric(gsub("-.*", "", V4))),
+                             home_score = suppressWarnings(as.numeric(gsub(".*-", "", V4))))
+  cleaned$time_remaining_half[1] <- ifelse(half <= 2, "20:00", "5:00")
+  mins <- suppressWarnings(as.numeric(gsub(":.*","", cleaned$time_remaining_half)))
+  secs <- suppressWarnings(as.numeric(gsub(".*:","", cleaned$time_remaining_half)))
+  cleaned$secs_remaining <- max(20 * (2 - half), 0) * 60 + 
+    5 * 60 * max((OTs * as.numeric(half <=2)), ((OTs + 2 - half) * as.numeric(half > 2))) + 60 * mins + secs
+  if(half == 1) {
+    cleaned[1, c("home_score", "away_score")] <- c(0,0)
+  }
+  cleaned <- select(cleaned, play_id, half, time_remaining_half, secs_remaining, description,
+                    home_score, away_score) 
+  return(cleaned)
+}
+
+
+
+###################################Get Season Long PBP Data ####################
 get_pbp <- function(team) {
   print(paste("Getting Game IDs: ", team, sep = ""))
+  
   ### Get Game IDs
-  base_url <- "http://www.espn.com/mens-college-basketball/team/_/id/"
-  url <- paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
-  
-  x <- scan(url, what = "", sep = "\n")
-  x <- x[grep("club-schedule", x)]
-  x <- unlist(strsplit(x, "gameId="))
-  x <- x[-1]
-  x <- x[1:(floor(length(x)/2))]
-  
-  gameIDs <- substring(x, 1, 9)
-  gameIDs <- unique(gameIDs)
+  gameIDs <- get_game_IDs(team)
   
   ### Get Play by Play Data 
   base_url <- "http://www.espn.com/mens-college-basketball/playbyplay?gameId="
@@ -78,7 +73,6 @@ get_pbp <- function(team) {
     else{
       j <- j + 1
     }
-    
     
     ### 0 OT
     if(ncol(tmp[[1]]) == 4) {
@@ -167,16 +161,7 @@ get_pbp <- function(team) {
   return(pbp_season)
 }
 
-get_roster <- function(team) {
-  print(paste("Getting Roster: ", team, sep = ""))
-  base_url <- "http://www.espn.com/mens-college-basketball/team/roster/_/id/"
-  url <-  paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
-  tmp <- readHTMLTable(url)
-  tmp <- as.data.frame(tmp[[1]][-1,])
-  names(tmp) <- c("Number", "Name", "Position", "Height", "Weight", "Class", "Hometown")
-  return(tmp)
-}
-
+############ Function to get PBP Data for a set of ESPN Game IDs ###############
 get_pbp_game <- function(gameIDs) {
   
   ### Get Play by Play Data 
@@ -278,6 +263,61 @@ get_pbp_game <- function(gameIDs) {
     return(pbp)
   }
 }
+
+################################  Get Schedule #################################
+get_schedule <- function(team) {
+  base_url <- "http://www.espn.com/mens-college-basketball/team/schedule/_/id/"
+  url <- paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
+  schedule <- readHTMLTable(url)[[1]][-1,]
+  names(schedule) <- c("date", "opponent", "result", "record")
+  schedule$opponent <- gsub("^vs", "", schedule$opponent)
+  schedule$opponent <- gsub("[@#*]", "", schedule$opponent)
+  schedule$opponent <- gsub("[0-9]*", "", schedule$opponent)
+  schedule$opponent <- gsub("^ ", "", schedule$opponent)
+  schedule$day <- as.numeric(gsub("[^0-9]*", "", schedule$date))
+  schedule$month <- substring(schedule$date, 6, 8)
+  schedule$month[schedule$month == "Nov"] <- 11
+  schedule$month[schedule$month == "Dec"] <- 12
+  schedule$month[schedule$month == "Jan"] <- 1
+  schedule$month[schedule$month == "Feb"] <- 2
+  schedule$month[schedule$month == "Mar"] <- 3
+  schedule$month <- as.numeric(schedule$month)
+  schedule$year <- ifelse(schedule$month <= 3, 18, 17)
+  schedule$date <- paste(schedule$month, schedule$day, schedule$year, sep = "/")
+  schedule$game_id <- get_game_IDs(team)
+  return(schedule[,c("date", "opponent", "game_id")])
+}
+
+######################### Get Game IDs ########################################
+get_game_IDs <- function(team) {
+  base_url <- "http://www.espn.com/mens-college-basketball/team/_/id/"
+  url <- paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
+  
+  x <- scan(url, what = "", sep = "\n")
+  x <- x[grep("club-schedule", x)]
+  x <- unlist(strsplit(x, "gameId="))
+  x <- x[-1]
+  x <- x[1:(floor(length(x)/2))]
+  
+  gameIDs <- substring(x, 1, 9)
+  gameIDs <- unique(gameIDs)
+  
+  return(gameIDs)
+}
+
+
+####################### Function To Get a Team's Roster ########################
+get_roster <- function(team) {
+  print(paste("Getting Roster: ", team, sep = ""))
+  base_url <- "http://www.espn.com/mens-college-basketball/team/roster/_/id/"
+  url <-  paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
+  tmp <- readHTMLTable(url)
+  tmp <- as.data.frame(tmp[[1]][-1,])
+  names(tmp) <- c("Number", "Name", "Position", "Height", "Weight", "Class", "Hometown")
+  return(tmp)
+}
+
+
 
 # ### Get all of 2017/18 Data
 # for(k in 1:351) {
