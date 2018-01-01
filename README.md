@@ -29,6 +29,8 @@ __wp_model.R:/__ Prepares data and builds win probability model (saved as object
 
 __wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(ESPN_Game_ID, home_color, away_color)```.
 
+__shiny_app:/__ Code for the [R Shiny App version of Assist Networks)](https://lbenz730.shinyapps.io/assist_networks).
+
 # Examples
 ### Assist Networks
 * Weighted Assist Network
