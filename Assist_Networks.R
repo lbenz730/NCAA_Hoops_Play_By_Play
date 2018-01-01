@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.1.2 (Updated 12.31.17)
+### Version 2.2.0 (Updated 1.1.18)
 
 library(igraph)
 library(dplyr)
@@ -112,6 +112,14 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   ### Compute Authority Scores
   auth_scores <- sort(authority_score(net, scale = F)$vector, decreasing = T)
   
+  ### Compute Assist Frequency Data
+  ast_freq <- ast_data$a_freq
+  names(ast_freq) <- ast_data$ast
+  
+  ### Compute Shot Frequency Data
+  shot_freq <- shot_data$a_freq
+  names(shot_freq) <- shot_data$shot
+  
   
   ### Create/Plot Undirected Network
   net <- graph.data.frame(network, directed = F)
@@ -153,6 +161,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   
   ### Return Results
   return(list("clust_coeff" = clust_coeff, "page_ranks" = pagerank, 
-              "hub_scores" = hubscores, "auth_scores" = auth_scores))
+              "hub_scores" = hubscores, "auth_scores" = auth_scores,
+              "ast_freq" = ast_freq, "shot_freq" = shot_freq))
 }
 
