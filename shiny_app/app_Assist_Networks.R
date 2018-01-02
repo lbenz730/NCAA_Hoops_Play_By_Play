@@ -127,7 +127,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   E(net)$width <- E(net)$weight * factor
   V(net)$color <- node_col
   
-  plot(net, vertex.label.color= "black", vertex.label.cex = 0.5,
+  plot(net, vertex.label.color= "black", vertex.label.cex = 1,
        layout= ifelse(tree, layout_as_tree,layout_in_circle),
        vertex.label.family = "Arial Black", 
        main = paste(text_team, ifelse(three_weights, " Weighted", ""), text, sep = ""))  

@@ -5,7 +5,6 @@ shinyServer(function(input, output, session) {
   autoInvalidate <- reactiveTimer(1000)
   observeEvent(input$select_team, {
     if(input$team != " ") {
-      print(input$team)
       schedule <- get_schedule(dict$ESPN[dict$NCAA == input$team])
       choose_opp <- paste(schedule$opponent, " (", schedule$date, ") ", sep = "")
       output$selectOpp <- renderUI({
