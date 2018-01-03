@@ -1,7 +1,15 @@
 # NCAA_Hoops_Play_By_Play
 Men's College Basketball Play by Play Data
 
-__NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. To get a particular team's play by play data, call ```get_pbp(team)```. Use the ```get_pbp_game(gameIDS)``` to get play-by-play data for a specific vector of ESPN game ids. To get a particular team's roster, call ```get_roster(team)```. Note that team names must adhere to ESPN naming conventions. A full dictionary of team names used by ESPN is provided in __ids.csv__  Note that play by play data is not available for all games.
+__NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. The following functions are available.
+
+* ```get_pbp(team)```.: Game entire 2017-18 Season's worth of play-by-play data for a given team.
+* ```get_pbp_game(gameIDS)```:  Get play-by-play data for a specific vector of ESPN game ids. 
+* ```get_roster(team)```: Get a particular team's roster. 
+* ```get_schedule(team)```: Get a team's schedule.
+* ```get_game_ids(team)```: Get a vector of ESPN Game IDs for all games in which ```team``` plays in.
+
+Note that team names must adhere to ESPN naming conventions. A full dictionary of team names used by ESPN is provided in __ids.csv__  Note that play by play data is not available for all games.
 
 __pbp_2016_17/:__ A folder containing play by play csv files for each team for the 2016-17 season. Additionally, the file [all_games.csv](https://drive.google.com/open?id=0BzSws2ZDOraxbXF0aWNJNmxCdnM) (too large for GitHub) contains all games scraped for the 2016-17 season. Each team's .csv file contains the following variables:
    * __play_id__: The index of a play in a given game
@@ -13,6 +21,8 @@ __pbp_2016_17/:__ A folder containing play by play csv files for each team for t
    * __away/home:__ Home and Away teams. See above for treatment of neutral site games.
    * __home_favored_by:__ Number of points the home team is favored by, if available. (i.e. 6 corresponds with traditional Vegas line of -6.0)
    
+__pbp_2017_18/:__ Same as above for 2017-18 season.
+
 __Assist_Network.R:__ The function ```assist_net(team, node_col, season, rmv_bench)```, used to create college basketball assist networks. 
   * ```team``` is the ESPN team name
   * ```node_col``` is the node color for the graph
@@ -30,6 +40,8 @@ __wp_model.R:/__ Prepares data and builds win probability model (saved as object
 __wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(ESPN_Game_ID, home_color, away_color)```.
 
 __shiny_app:/__ Code for the [R Shiny App version of Assist Networks](https://lbenz730.shinyapps.io/assist_networks).
+
+__network_metric_leaders.R:__ A script for computing weighted/unweighted assist network metrics for all 351 Division 1 teams. The mid-season leaderboad for the 2017-18 season is stored in __1_2_2018_assist_leaderboard.csv__. 
 
 # Examples
 ### Assist Networks
