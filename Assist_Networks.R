@@ -41,6 +41,9 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   games <- unique(x$game_id)
   ast <- grep("Assisted", x$description)
   x <- x[ast, ]
+  if(team == "VMI") {
+    roster <- roster[-8,]
+  }
   
   ### Get Ast/Shot from ESPN Play Description
   splitplay <- function(description) {
