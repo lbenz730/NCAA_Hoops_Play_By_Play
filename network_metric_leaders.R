@@ -66,4 +66,4 @@ for(i in 1:351) {
   
 }
 
-write.csv(metrics, "1_2_2018_assit_leaderboad.csv", row.names = F)
+write.csv(metrics, "1_2_2018_assist_leaderboad.csv", row.names = F)
