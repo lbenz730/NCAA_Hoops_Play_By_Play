@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.1.2 (Updated 12.31.17)
+### Version 2.2.1 (Updated 1.4.18)
 
 library(igraph)
 library(dplyr)
@@ -35,6 +35,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   team <- gsub(" ", "_", team)
   roster <- read.csv(paste("rosters_2017_18/", team, ".csv", sep = ""), as.is = T)
   roster$Name <- gsub(" Jr.", "", roster$Name)
+  roster$Name <- gsub(" III", "", roster$Name)
   games <- unique(x$game_id)
   ast <- grep("Assisted", x$description)
   x <- x[ast, ]
