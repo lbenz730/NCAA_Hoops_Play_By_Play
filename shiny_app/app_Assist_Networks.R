@@ -34,9 +34,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   ### Get Roster
   team <- gsub(" ", "_", team)
   roster <- read.csv(paste("rosters_2017_18/", team, ".csv", sep = ""), as.is = T)
-  roster$Name <- gsub(" Jr.", "", roster$Name)
-  roster$Name <- gsub(" Jr", "", roster$Name)
-  roster$Name <- gsub(" III", "", roster$Name)
+  roster$Name <- gsub("Jr.", "Jr", roster$Name)
   games <- unique(x$game_id)
   ast <- grep("Assisted", x$description)
   x <- x[ast, ]
@@ -46,9 +44,12 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   
   ### Get Ast/Shot from ESPN Play Description
   splitplay <- function(description) {
-    tmp <- strsplit(strsplit(description, "[.]")[[1]], " ")
-    shot_maker <- paste(tmp[[1]][1:2], collapse = " ")
-    assister <- paste(tmp[[2]][4:5], collapse = " ")
+    tmp <- strsplit(strsplit(description, "Assisted")[[1]], " ")
+    n1 <- grep("made", tmp[[1]])
+    n2 <- length(tmp[[2]])
+    tmp[[2]][n2] <- substring(tmp[[2]][n2], 1, nchar(tmp[[2]][n2]) - 1)
+    shot_maker <- paste(tmp[[1]][1:(n1-1)], collapse = " ")
+    assister <- paste(tmp[[2]][3:n2], collapse = " ")
     return(list("shot_maker" = shot_maker, "assister" = assister))
   }
   
@@ -60,6 +61,8 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   }
   
   ### Get only shots made by the team in question
+  x$ast <- gsub("Jr.", "Jr", x$ast)
+  x$shot <- gsub("Jr.", "Jr", x$shot)
   x <- x[is.element(x$ast, roster$Name), ]
   
   sets <- 2 * choose(nrow(roster), 2)
