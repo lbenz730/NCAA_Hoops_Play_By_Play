@@ -132,7 +132,7 @@ wp_chart <- function(gameID, home_col, away_col) {
   
   
   ### Min Win Prob
-  if(max(data$winprob == 1)) { 
+  if(data$scorediff[nrow(data)] > 0) { 
     min_prob <- min(data$winprob)
     min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, 2), "%")
   }
