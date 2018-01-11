@@ -48,8 +48,16 @@ secs_to_model <- function(sec, msec) {
     }
   }
   
-          
-  if(sec <= 30) {
+  if(sec == 0) {
+    m <- 1
+  }
+  else if(sec >= 1 & sec < 5) {
+    m <- 5
+  }
+  else if(sec >= 5 & sec < 10) {
+    m <- 10
+  }
+  else if(sec > 10 & sec <= 30) {
     m <- sec + 1
   }
   else if(sec > 30 & sec <= 60) {
@@ -134,12 +142,13 @@ wp_chart <- function(gameID, home_col, away_col) {
   ### Min Win Prob
   if(data$scorediff[nrow(data)] > 0) { 
     min_prob <- min(data$winprob)
-    min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, 2), "%")
+    digits <- ifelse(min_prob < 0.0001, 20, 2)
+    min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, digits), "%")
   }
   else{
     min_prob <- min(1 - data$winprob)
-    min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 2), "%")
+    digits <- ifelse(min_prob < 0.0001, 20, 2)
+    min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, digits), "%")
   }
-  
   text(500,0, min_prob, cex = 0.8)
 }
