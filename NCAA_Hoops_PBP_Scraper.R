@@ -183,6 +183,8 @@ get_pbp_game <- function(gameIDs) {
       j <- j + 1
     }
     
+    n <- length(tmp)
+  
     
     if(ncol(tmp[[1]]) == 4) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 0)
@@ -191,7 +193,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 1 OT
-    else if(ncol(tmp[[1]]) == 5 & ((length(tmp) == 6 & ncol(tmp[[5]]) == 4) | (length(tmp) == 5 & ncol(tmp[[4]]) == 5))) {
+    else if(ncol(tmp[[1]]) == 5 & ((n == 6 & ncol(tmp[[5]]) == 4) | (n == 5 & ncol(tmp[[4]]) == 5))) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 1)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 1)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 1)
@@ -199,7 +201,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 2 OT
-    else if(ncol(tmp[[1]]) == 5 & ((length(tmp) == 7 & ncol(tmp[[6]]) == 4) | (length(tmp) == 6 & ncol(tmp[[5]]) == 5))) {
+    else if(ncol(tmp[[1]]) == 5 & ((n == 7 & ncol(tmp[[6]]) == 4) | (n == 6 & ncol(tmp[[5]]) == 5))) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 2)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 2)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 2)
@@ -208,7 +210,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 3 OT
-    else if(ncol(tmp[[1]]) == 5 & ((length(tmp) == 8 & ncol(tmp[[7]]) == 4) | (length(tmp) == 7 & ncol(tmp[[6]]) == 5))){
+    else if(ncol(tmp[[1]]) == 5 & ((n == 8 & ncol(tmp[[7]]) == 4) | (n == 7 & ncol(tmp[[6]]) == 5))){
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 3)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 3)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 3)
@@ -218,7 +220,7 @@ get_pbp_game <- function(gameIDs) {
     }
     
     ### 4 OT
-    else if(ncol(tmp[[1]]) == 5 & ((length(tmp) == 9 & ncol(tmp[[8]]) == 4) | (length(tmp) == 8 & ncol(tmp[[7]]) == 5))) {
+    else if(ncol(tmp[[1]]) == 5 & ((n == 9 & ncol(tmp[[8]]) == 4) | (n == 8 & ncol(tmp[[7]]) == 5))) {
       half_1 <- clean(as.data.frame(tmp[[2]]), 1, 4)
       half_2 <- clean(as.data.frame(tmp[[3]]), 2, 4)
       half_3 <- clean(as.data.frame(tmp[[4]]), 3, 4)
@@ -260,8 +262,8 @@ get_pbp_game <- function(gameIDs) {
     pbp$play_id <- 1:nrow(pbp)
     pbp$game_id <- gameIDs[i]
     
-    return(pbp)
   }
+  return(pbp)
 }
 
 ################################  Get Schedule #################################
