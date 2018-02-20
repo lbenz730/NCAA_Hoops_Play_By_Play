@@ -30,6 +30,7 @@ __Assist_Network.R:__ The function ```assist_net(team, node_col, season, rmv_ben
   * ```rmv_bench```: Logical. If TRUE, removes all players who aren't in the network. 
   * ```tree```: Logical. If TRUE, draws graph in tree structure. If FALSE, draws graph in circle
   * ```three_weights```: Logical. If TRUE, assisted three point shots are given 1.5 weight. If FALSE, assisted three point shots are given weight 1. In both cases, assisted 2 point shots are given weight 1. 
+  * ```Message``` (default = ```NA```) Option for custom message to replace graph title when using a subset of the season (e.g. conference play).
   
 __rosters_2016_17/:__ 2016-17 rosters for each team.
 
@@ -47,11 +48,11 @@ __network_metric_leaders.R:__ A script for computing weighted/unweighted assist 
 ### Assist Networks
 * Weighted Assist Network
 ![Yale Weighted Assist Network](pics/Yale_Weighted_Network.png)
-```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = F, three_weights = T)```
+```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = F, three_weights = T, message = NA)```
 
 * Tree Assist Network
 ![Yale Tree Assist Network](pics/Yale_Tree.png)
-```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = T, three_weights = F)```
+```assist_net("Yale", "royalblue1", "2017-18", rmv_bench = T, tree = T, three_weights = F, message = NA)```
 
 ### Win Probability Charts
 * Texas A&M vs. Northern Iowa, March 20, 2016
