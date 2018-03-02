@@ -142,13 +142,21 @@ wp_chart <- function(gameID, home_col, away_col) {
   ### Min Win Prob
   if(data$scorediff[nrow(data)] > 0) { 
     min_prob <- min(data$winprob)
-    digits <- ifelse(min_prob < 0.0001, 20, 2)
-    min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, digits), "%")
+    if(min_prob < 0.001) {
+      min_prob <- paste("Minimum Win Probability for", data$home[1], "< 0.1", "%")
+    }
+    else{
+      min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, 4), "%")
+    }
   }
   else{
     min_prob <- min(1 - data$winprob)
-    digits <- ifelse(min_prob < 0.0001, 20, 2)
-    min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, digits), "%")
+    if(min_prob < 0.001) {
+      min_prob <- paste("Minimum Win Probability for", data$away[1], "< 0.1", "%")
+    }
+    else{
+      min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 4), "%")
+    }
   }
   text(500,0, min_prob, cex = 0.8)
 }
