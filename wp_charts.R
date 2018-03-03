@@ -123,39 +123,49 @@ wp_chart <- function(gameID, home_col, away_col) {
   ### Plot Results
   data$secs_elapsed <- max(data$secs_remaining) - data$secs_remaining
   title <- paste("Win Probability Chart for", data$away[1], "vs.", data$home[1])
+  if(data$scorediff[nrow(data)] < 0) { 
   plot(winprob ~ secs_elapsed, data = data, col = home_col, type = "l", lwd = 3, ylim = c(0,1),
        xlab = "Seconds Elapsed", ylab = "Win Probability", main = title)
   par(new = T)
   plot((1 - winprob) ~ secs_elapsed, data = data, col = away_col, type = "l", lwd = 3, ylim = c(0,1),
        xlab = "", ylab = "", main = "")
   abline(h = 0.5, lty = 2)
-  if(data$winprob[1] < 0.85) {
-    legend("topleft", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
-           cex = 0.5)
   }
   else{
-    legend("left", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
-           cex = 0.5)
+    plot((1 - winprob) ~ secs_elapsed, data = data, col = away_col, type = "l", lwd = 3, ylim = c(0,1),
+         xlab = "Seconds Elapsed", ylab = "Win Probability", main = title)
+    par(new = T)
+    plot(winprob ~ secs_elapsed, data = data, col = home_col, type = "l", lwd = 3, ylim = c(0,1),
+         xlab = "", ylab = "", main = "")
+    abline(h = 0.5, lty = 2)
+  }
+  if(data$winprob[1] < 0.85) {
+    #legend("topleft", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
+           #cex = 0.5)
+  }
+  else{
+    #legend("left", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
+           #cex = 0.5)
   }
   
   
   ### Min Win Prob
   if(data$scorediff[nrow(data)] > 0) { 
     min_prob <- min(data$winprob)
-    if(min_prob < 0.001) {
-      min_prob <- paste("Minimum Win Probability for", data$home[1], "< 0.1", "%")
+    if(min_prob < 0.01) {
+      min_prob <- paste("Minimum Win Probability for", data$home[1], "< 1", "%")
     }
     else{
-      min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, 4), "%")
+      min_prob <- paste("Minimum Win Probability for", data$home[1], round(100 * min_prob, 1), "%")
     }
   }
   else{
     min_prob <- min(1 - data$winprob)
-    if(min_prob < 0.001) {
-      min_prob <- paste("Minimum Win Probability for", data$away[1], "< 0.1", "%")
+    if(min_prob < 0.01) {
+      min_prob <- paste("Minimum Win Probability for", data$away[1], "< 1", "%")
     }
     else{
-      min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 4), "%")
+      min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 1), "%")
     }
   }
   text(500,0, min_prob, cex = 0.8)
