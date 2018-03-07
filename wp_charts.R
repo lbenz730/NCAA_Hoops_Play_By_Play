@@ -97,7 +97,7 @@ get_line <- function(data) {
   return(line)
 }
 
-wp_chart <- function(gameID, home_col, away_col) {
+wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
   ### Scrape Data from ESPN
   data <- get_pbp_game(gameID)
   
@@ -124,12 +124,12 @@ wp_chart <- function(gameID, home_col, away_col) {
   data$secs_elapsed <- max(data$secs_remaining) - data$secs_remaining
   title <- paste("Win Probability Chart for", data$away[1], "vs.", data$home[1])
   if(data$scorediff[nrow(data)] < 0) { 
-  plot(winprob ~ secs_elapsed, data = data, col = home_col, type = "l", lwd = 3, ylim = c(0,1),
-       xlab = "Seconds Elapsed", ylab = "Win Probability", main = title)
-  par(new = T)
-  plot((1 - winprob) ~ secs_elapsed, data = data, col = away_col, type = "l", lwd = 3, ylim = c(0,1),
-       xlab = "", ylab = "", main = "")
-  abline(h = 0.5, lty = 2)
+    plot(winprob ~ secs_elapsed, data = data, col = home_col, type = "l", lwd = 3, ylim = c(0,1),
+         xlab = "Seconds Elapsed", ylab = "Win Probability", main = title)
+    par(new = T)
+    plot((1 - winprob) ~ secs_elapsed, data = data, col = away_col, type = "l", lwd = 3, ylim = c(0,1),
+         xlab = "", ylab = "", main = "")
+    abline(h = 0.5, lty = 2)
   }
   else{
     plot((1 - winprob) ~ secs_elapsed, data = data, col = away_col, type = "l", lwd = 3, ylim = c(0,1),
@@ -139,15 +139,16 @@ wp_chart <- function(gameID, home_col, away_col) {
          xlab = "", ylab = "", main = "")
     abline(h = 0.5, lty = 2)
   }
-  if(data$winprob[1] < 0.85) {
-    #legend("topleft", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
-           #cex = 0.5)
+  if(show_legend) {
+    if(data$winprob[1] < 0.85) {
+      legend("topleft", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
+             cex = 0.5)
+    }
+    else{
+      legend("left", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
+             cex = 0.5)
+    }
   }
-  else{
-    #legend("left", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
-           #cex = 0.5)
-  }
-  
   
   ### Min Win Prob
   if(data$scorediff[nrow(data)] > 0) { 
