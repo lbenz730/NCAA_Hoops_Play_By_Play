@@ -59,3 +59,6 @@ __network_metric_leaders.R:__ A script for computing weighted/unweighted assist 
 * Texas A&M vs. Northern Iowa, March 20, 2016
 ![Texas A&M vs. Northern Iowa, March 20, 2016](pics/WinProb.png)
 ```wp_chart(400872229, "maroon", "purple")```
+* Cincinnati vs. Houston, March 11, 2018 (2018 AAC Championship Game)
+![Cincinnati vs. Houston, March 11, 2018 (2018 AAC Championship Game)](pics/GEI_example.png)
+Update 3/13/2018: Added Game Excitement Index (GEI) to charts. 
