@@ -8,6 +8,7 @@ __NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. The follo
 * ```get_roster(team)```: Get a particular team's roster. 
 * ```get_schedule(team)```: Get a team's schedule.
 * ```get_game_ids(team)```: Get a vector of ESPN Game IDs for all games in which ```team``` plays in.
+* ```get_date(gameID)```: Gets the date of a game given an ESPN Game ID.
 
 Note that team names must adhere to ESPN naming conventions. A full dictionary of team names used by ESPN is provided in __ids.csv__  Note that play by play data is not available for all games.
 
@@ -36,9 +37,9 @@ __rosters_2016_17/:__ 2016-17 rosters for each team.
 
 __rosters_2017_18/:__ 2017-18 rosters for each team.
 
-__wp_model.R:/__ Prepares data and builds win probability model (saved as object __wp_hoops.rds__). Requires [all_games.csv](https://drive.google.com/open?id=0BzSws2ZDOraxbXF0aWNJNmxCdnM) and [2017_18_mid_season.csv](https://drive.google.com/file/d/1b7P-p1loGIghL0zDpzaox255X93Mqgkg/view?usp=sharing).
+__wp_model.R:/__ Prepares data and builds win probability model (coefficients saved as object __wp_hoops.csv__). Requires [all_games.csv](https://drive.google.com/open?id=0BzSws2ZDOraxbXF0aWNJNmxCdnM) and [2017_18_mid_season.csv](https://drive.google.com/file/d/1b7P-p1loGIghL0zDpzaox255X93Mqgkg/view?usp=sharing).
 
-__wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(ESPN_Game_ID, home_color, away_color)```.
+__wp_charts.R:/__ Plots win probability chart for given game. Usage:```wp_chart(ESPN_Game_ID, home_color, away_color, show_legend = T)```. The ```show_legend``` parameter is defaulted to ```TRUE```. I recommend turning this parameter off when plotting more than one win probability charts on a single graph.
 
 __shiny_app:/__ Code for the [R Shiny App version of Assist Networks](https://lbenz730.shinyapps.io/assist_networks).
 
