@@ -127,8 +127,9 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
   for(i in 2:nrow(data)) {
     data$wp_delta[i] <- abs(data$winprob[i] - data$winprob[i-1])
   }
-  gei <- sum(data$wp_delta) * msec/2400
+  gei <- sum(data$wp_delta) * 2400/msec
   gei <- paste("Game Excitement Index:", round(gei, 2))
+  gap <- 0.08
     
   
   ### Plot Results
@@ -151,6 +152,7 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
     abline(h = 0.5, lty = 2)
   }
   if(show_legend) {
+    gap <- 0.02
     if(data$winprob[1] < 0.85) {
       legend("topleft", col = c(home_col, away_col), legend = c(data$home[1], data$away[1]), lty = 1, 
              cex = 0.5)
@@ -180,6 +182,6 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
       min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 1), "%")
     }
   }
-  text(600, 0.02, min_prob, cex = 0.8)
-  text(6000, 0, gei, cex = 0.8)
+  text(600, gap, min_prob, cex = 0.8)
+  text(600, 0, gei, cex = 0.8)
 }
