@@ -82,7 +82,7 @@ games$secs <- NA
 for(i in 1:length(gameIDs)) {
   print(i)
   msec <- max(games$secs_remaining[games$game_id == gameIDs[i]])
-
+  
   if(msec == 2400) {
     games$secs[games$game_id == gameIDs[i]] <- 
       games$secs_remaining[games$game_id == gameIDs[i]]
@@ -98,12 +98,12 @@ for(i in 1:length(gameIDs)) {
       games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 300 & games$secs_remaining < 600] - 300
   }
   else if(msec > 3000 & msec <= 3300){
-  games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 900] <-
-    games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 900] - 900
-  games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 600 & games$secs_remaining < 900] <-
-    games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 600 & games$secs_remaining < 900] - 600
-  games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 300 & games$secs_remaining < 600] <-
-    games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 300 & games$secs_remaining < 600] - 300
+    games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 900] <-
+      games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 900] - 900
+    games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 600 & games$secs_remaining < 900] <-
+      games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 600 & games$secs_remaining < 900] - 600
+    games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 300 & games$secs_remaining < 600] <-
+      games$secs_remaining[games$game_id == gameIDs[i] & games$secs_remaining >= 300 & games$secs_remaining < 600] - 300
   }
   else if(msec > 3300 & msec <= 3600){
     games$secs[games$game_id == gameIDs[i] & games$secs_remaining >= 1200] <-
@@ -126,14 +126,18 @@ games$pre_game_prob <- predict(prior, newdata = tmp, type = "response")
 
 ### Fit Series of Logistic Model
 secs <- c(0:29, seq(30, 60, 2), seq(70, 2400, 10))
-wp_hoops <- list()
+wp_hoops <- data.frame("intercept" = rep(NA, (length(secs) - 1)),
+                     "scorediff" = rep(NA, (length(secs) - 1)),
+                     "pre_game_prob" = rep(NA, (length(secs) - 1)))
 
 for(i in 1:(length(secs) - 1)){
   print(i)
-  wp_hoops[[i]] <- suppressWarnings(glm(win ~  scorediff + pre_game_prob, 
+  tmp <- suppressWarnings(glm(win ~  scorediff + pre_game_prob, 
                                         data = games[games$secs >= secs[i] & games$secs_remaining < secs[i+1], ], 
                                         family = binomial))
+  wp_hoops[i,] <- tmp$coefficients
+  
 }
 
 ### Save Model
-saveRDS(wp_hoops, "wp_hoops.rds")
+write.csv(wp_hoops, "wp_hoops.csv", row.names = F)

@@ -1,9 +1,10 @@
 ### NCAA Hoops PBP Scraper
 ### Luke Benz
-### Version 1.4 (Updated 12/31/17)
+### Version 1.5 (Updated 3/13/18)
 
 library(XML)
 library(dplyr)
+stripwhite <- function(x) gsub("\\s*$", "", gsub("^\\s*", "", x))
 
 ### Create Team URL Dictionairy for Acquiring Team PBP Data
 teams_url <- "http://www.espn.com/mens-college-basketball/teams"
@@ -151,6 +152,13 @@ get_pbp <- function(team) {
     pbp$play_id <- 1:nrow(pbp)
     pbp$game_id <- gameIDs[i]
     
+    ### Get Date
+    url <- paste("http://www.espn.com/mens-college-basketball/playbyplay?gameId=", gameIDs[i], sep = "")
+    y <- scan(url, what = "", sep = "\n")[8]
+    y <- unlist(strsplit(y, "-"))
+    date <-  stripwhite(y[length(y) - 1])
+    pbp$date <- date
+    
     if(j == 1) {
       pbp_season <- pbp
     }else{
@@ -257,10 +265,16 @@ get_pbp_game <- function(gameIDs) {
     else {
       line <- NA
     }
-    
+  
     pbp$home_favored_by <- line
     pbp$play_id <- 1:nrow(pbp)
     pbp$game_id <- gameIDs[i]
+    
+    url <- paste("http://www.espn.com/mens-college-basketball/playbyplay?gameId=", gameIDs[i], sep = "")
+    y <- scan(url, what = "", sep = "\n")[8]
+    y <- unlist(strsplit(y, "-"))
+    date <-  stripwhite(y[length(y) - 1])
+    pbp$date <- date
     
   }
   return(pbp)
@@ -319,7 +333,13 @@ get_roster <- function(team) {
   return(tmp)
 }
 
-
+get_date <- function(gameID) {
+  url <- paste("http://www.espn.com/mens-college-basketball/playbyplay?gameId=", gameID, sep = "")
+  y <- scan(url, what = "", sep = "\n")[8]
+  y <- unlist(strsplit(y, "-"))
+  date <-  stripwhite(y[length(y) - 1])
+  return(date)
+}
 
 # ### Get all of 2017/18 Data
 # for(k in 1:351) {

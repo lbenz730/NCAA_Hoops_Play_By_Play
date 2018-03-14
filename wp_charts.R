@@ -1,6 +1,6 @@
 source("NCAA_Hoops_PBP_Scraper.R")
 dict <- read.csv("ESPN_NCAA_Dict.csv", as.is = T)
-wp_hoops <- readRDS("wp_hoops.rds")
+wp_hoops <- read.csv("wp_hoops.csv", as.is = T)
 y <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_Files/Results/2017-18/NCAA_Hoops_Results_11_19_2017.csv", 
               as.is = T)
 x <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_Files/Power_Rankings/Powerrankings.csv", 
@@ -100,6 +100,7 @@ get_line <- function(data) {
 wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
   ### Scrape Data from ESPN
   data <- get_pbp_game(gameID)
+  date <- data$date
   
   ### Cleaning
   data$scorediff <- data$home_score - data$away_score
@@ -114,15 +115,25 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
   msec <- max(data$secs_remaining)
   for(i in 1:nrow(data)) {
     m <- secs_to_model(data$secs_remaining[i], msec)
-    model <- wp_hoops[[m]]$coefficients
-    log_odds <- model[1] + data$scorediff[i]*model[2] + data$pre_game_prob[i]*model[3]
+    model <- wp_hoops[m,]
+    log_odds <- model$intercept + data$scorediff[i]*model$scorediff + 
+      data$pre_game_prob[i]*model$pre_game_prob
     odds <- exp(log_odds)
     data$winprob[i] <- odds/(1 + odds)
   }
   
+  ### Game Excitemant Index
+  data$wp_delta <- 0
+  for(i in 2:nrow(data)) {
+    data$wp_delta[i] <- abs(data$winprob[i] - data$winprob[i-1])
+  }
+  gei <- sum(data$wp_delta) * msec/2400
+  gei <- paste("Game Excitement Index:", round(gei, 2))
+    
+  
   ### Plot Results
   data$secs_elapsed <- max(data$secs_remaining) - data$secs_remaining
-  title <- paste("Win Probability Chart for", data$away[1], "vs.", data$home[1])
+  title <- paste("Win Probability Chart for", data$away[1], "vs.", data$home[1],"\n", date[1])
   if(data$scorediff[nrow(data)] < 0) { 
     plot(winprob ~ secs_elapsed, data = data, col = home_col, type = "l", lwd = 3, ylim = c(0,1),
          xlab = "Seconds Elapsed", ylab = "Win Probability", main = title)
@@ -169,5 +180,6 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
       min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 1), "%")
     }
   }
-  text(500,0, min_prob, cex = 0.8)
+  text(600, 0.02, min_prob, cex = 0.8)
+  text(6000, 0, gei, cex = 0.8)
 }
