@@ -286,8 +286,9 @@ get_schedule <- function(team) {
   url <- paste(base_url, ids$id[ids$team == team], "/", ids$link[ids$team == team], sep = "")
   schedule <- readHTMLTable(url)[[1]][-1,]
   names(schedule) <- c("date", "opponent", "result", "record")
+  schedule <- schedule[!is.na(schedule$opponent),]
   schedule$opponent <- gsub("^vs", "", schedule$opponent)
-  schedule$opponent <- gsub("[@#*]", "", schedule$opponent)
+  schedule$opponent <- gsub("[@#*()]", "", schedule$opponent)
   schedule$opponent <- gsub("[0-9]*", "", schedule$opponent)
   schedule$opponent <- gsub("^ ", "", schedule$opponent)
   schedule$day <- as.numeric(gsub("[^0-9]*", "", schedule$date))
