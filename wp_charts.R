@@ -1,7 +1,7 @@
 source("NCAA_Hoops_PBP_Scraper.R")
 dict <- read.csv("ESPN_NCAA_Dict.csv", as.is = T)
 wp_hoops <- read.csv("wp_hoops.csv", as.is = T)
-y <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_Files/Results/2017-18/NCAA_Hoops_Results_3_14_2017.csv", 
+y <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_Files/Results/2017-18/NCAA_Hoops_Results_3_14_2018.csv", 
               as.is = T)
 x <- read.csv("https://raw.githubusercontent.com/lbenz730/NCAA_Hoops/master/2.0_Files/Power_Rankings/Powerrankings.csv", 
               as.is = T)
