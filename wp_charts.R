@@ -85,7 +85,7 @@ get_line <- function(data) {
     return(NA)
   }
   game <- y %>% filter(team == home, opponent == away, location == "H")
-  HCA <- 3.5
+  HCA <- 0
   if(nrow(game) == 0) {
     game <- y %>% filter(team == home, opponent == away, location == "N")
     HCA <- 0
@@ -130,7 +130,7 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
   gei <- sum(data$wp_delta) * 2400/msec
   gei <- paste("Game Excitement Index:", round(gei, 2))
   gap <- 0.08
-    
+  
   
   ### Plot Results
   data$secs_elapsed <- max(data$secs_remaining) - data$secs_remaining
@@ -182,6 +182,8 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
       min_prob <- paste("Minimum Win Probability for", data$away[1], round(100 * min_prob, 1), "%")
     }
   }
-  text(600, gap, min_prob, cex = 0.8)
-  text(600, 0, gei, cex = 0.8)
+  if(show_legend) {
+    text(600, gap, min_prob, cex = 0.8)
+    text(600, 0, gei, cex = 0.8)
+  }
 }
