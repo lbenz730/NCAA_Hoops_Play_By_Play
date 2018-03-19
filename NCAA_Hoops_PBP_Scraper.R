@@ -315,8 +315,10 @@ get_game_IDs <- function(team) {
   x <- unlist(strsplit(x, "gameId="))
   x <- x[-1]
   x <- x[1:(floor(length(x)/2))]
+  reg_flag <- grep("<h2>Regular Season</h2>", x) 
   
   gameIDs <- substring(x, 1, 9)
+  gameIDs <- c(gameIDs[-c(1:reg_flag)], gameIDs[1:reg_flag])
   gameIDs <- unique(gameIDs)
   
   return(gameIDs)
