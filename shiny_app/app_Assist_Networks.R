@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.2.1 (Updated 1.4.18)
+### Version 2.2.2 (Updated 3.20.18)
 
 library(igraph)
 library(dplyr)
@@ -13,12 +13,12 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   if(season[1] == "2016-17") {
     x <- read.csv(paste("pbp_2016_17/", team, ".csv", sep = ""), as.is = T)
     text <- " Assist Network for 2017-18 Returning Players"
-    factor <- 1.25
+    factor <- 0.75
   }else if(season[1] == "2017-18") {
     x <- get_pbp(team)
     
     text <- " Assist Network for 2017-18 Season"
-    factor <- 1.25
+    factor <- 0.75
     x$description <- as.character(x$description)
   }else {
     x <- suppressWarnings(try(get_pbp_game(season), silent = T))
@@ -28,7 +28,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
     opp <- setdiff(c(x$away, x$home), text_team)
     text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)
-    factor <- 3
+    factor <- 1.25
   }
   
   ### Get Roster
@@ -146,4 +146,5 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
               "hub_scores" = hubscores, "auth_scores" = auth_scores,
               "ast_freq" = ast_freq, "shot_freq" = shot_freq))
 }
+
 
