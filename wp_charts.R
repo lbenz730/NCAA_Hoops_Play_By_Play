@@ -183,7 +183,8 @@ wp_chart <- function(gameID, home_col, away_col, show_legend = T) {
     }
   }
   if(show_legend) {
-    text(600, gap, min_prob, cex = 0.8)
-    text(600, 0, gei, cex = 0.8)
+    text(600, 2 * gap, min_prob, cex = 0.8)
+    text(600, gap, gei, cex = 0.8)
+    text(5, 0, "@recspecs730", cex = 0.6)
   }
 }
