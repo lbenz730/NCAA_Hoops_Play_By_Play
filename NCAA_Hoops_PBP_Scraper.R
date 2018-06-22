@@ -1,6 +1,6 @@
 ### NCAA Hoops PBP Scraper
 ### Luke Benz
-### Version 1.5 (Updated 3/13/18)
+### Version 1.6 (Updated 6/21/18)
 
 library(XML)
 library(dplyr)
@@ -24,7 +24,7 @@ for(i in 1:length(x)) {
   ids$link[i] <- y[1]
   ids$team[i] <- paste(y[-1], collapse = " ")
 }
-
+write.csv(ids, "ids.csv", row.names = F)
 
 ####################### Function to clean PBP data #############################
 clean <- function(data, half, OTs) {
@@ -62,6 +62,10 @@ get_pbp <- function(team) {
   j <- 0
   
   for(i in 1:length(gameIDs)) {
+    if(is.nit(gameIDs[i])) {
+      print("NIT Game--Play by Play Data Not Available at this time")
+      next
+    }
     print(paste("Getting ", team, " Game: ", i, "/", length(gameIDs), sep = ""))
     url <- paste(base_url, gameIDs[i], sep = "")
     tmp <- try(readHTMLTable(url), silent = T)
@@ -179,6 +183,10 @@ get_pbp_game <- function(gameIDs) {
   
   for(i in 1:length(gameIDs)) {
     print(paste("Game: ", i, "/", length(gameIDs), sep = ""))
+    if(is.nit(gameIDs[i])) {
+      print("NIT Game--Play by Play Data Not Available at this time")
+      next
+    }
     url <- paste(base_url, gameIDs[i], sep = "")
     tmp <- try(readHTMLTable(url), silent = T)
     
@@ -276,6 +284,12 @@ get_pbp_game <- function(gameIDs) {
     date <-  stripwhite(y[length(y) - 1])
     pbp$date <- date
     
+    if(i == 1) {
+      pbp_all <- pbp
+    }
+    else{
+      pbp_all <- rbind(pbp_all, pbp)
+    }
   }
   return(pbp)
 }
@@ -318,7 +332,9 @@ get_game_IDs <- function(team) {
   reg_flag <- grep("<h2>Regular Season</h2>", x) 
   
   gameIDs <- substring(x, 1, 9)
-  gameIDs <- c(gameIDs[-c(1:reg_flag)], gameIDs[1:reg_flag])
+  if(length(reg_flag) > 0) {
+    gameIDs <- c(gameIDs[-c(1:reg_flag)], gameIDs[1:reg_flag])
+  }
   gameIDs <- unique(gameIDs)
   
   return(gameIDs)
@@ -344,19 +360,28 @@ get_date <- function(gameID) {
   return(date)
 }
 
-# ### Get all of 2017/18 Data
-# for(k in 1:351) {
-#   data <- get_pbp(ids$team[k])
-#   write.table(data, paste("pbp_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
-#   roster <- get_roster(ids$team[k])
-#   write.table(roster, paste("rosters_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
-# 
-# 
-#   if(k == 1){
-#     season <- data
-#   }else{
-#     season <- rbind(season, data)
-#   }
-# }
-# 
-# write.table(season, "pbp_2017_18/all_games.csv", row.names = F, col.names = T, sep = ",")
+################################# Checks if Game is in NIT #####################
+is.nit <- function(gameID) {
+  url <- paste("http://www.espn.com/mens-college-basketball/playbyplay?gameId=", gameID, sep = "")
+  y <- scan(url, what = "", sep = "\n")
+  return(any(grepl("NIT", y)))
+}
+
+
+### Get all of 2017/18 Data
+for(k in 1:351) {
+  data <- get_pbp(ids$team[k])
+  write.table(data, paste("pbp_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  roster <- get_roster(ids$team[k])
+  write.table(roster, paste("rosters_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+  schedule <- get_schedule(ids$team[k])
+  write.table(schedule, paste("schedules_2017_18/", gsub(" ", "_", ids$team[k]), ".csv", sep = ""), row.names = F, col.names = T, sep = ",")
+
+  if(k == 1){
+    season <- data
+  }else{
+    season <- rbind(season, data)
+  }
+}
+
+write.table(season, "pbp_2017_18/all_games.csv", row.names = F, col.names = T, sep = ",")
