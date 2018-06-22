@@ -2,10 +2,11 @@ library(shiny)
 source("global.R")
 
 shinyServer(function(input, output, session) {
-  autoInvalidate <- reactiveTimer(1000)
   observeEvent(input$select_team, {
     if(input$team != " ") {
-      schedule <- get_schedule(dict$ESPN[dict$NCAA == input$team])
+      schedule <- read.csv(paste("schedules_2017_18/", 
+                                 gsub(" ", "_", dict$ESPN[dict$NCAA == input$team]),
+                                 ".csv", sep = ""))
       choose_opp <- paste(schedule$opponent, " (", schedule$date, ") ", sep = "")
       output$selectOpp <- renderUI({
         ui = mainPanel(
@@ -32,7 +33,10 @@ shinyServer(function(input, output, session) {
   })
   
   observeEvent(input$render_net, {
-    schedule <- get_schedule(dict$ESPN[dict$NCAA == input$team])
+    #schedule <- get_schedule(dict$ESPN[dict$NCAA == input$team])
+    schedule <- read.csv(paste("schedules_2017_18/", 
+                               gsub(" ", "_", dict$ESPN[dict$NCAA == input$team]),
+                               ".csv", sep = ""))
     
     ### Plot Netwok
     output$networkPlot <- renderPlot({
@@ -44,12 +48,12 @@ shinyServer(function(input, output, session) {
       else{
         schedule$day_opp <- paste(schedule$opponent, " (", schedule$date, ") ", sep = "")
         selected_season <- schedule$game_id[schedule$day_opp == input$opponent]
-        x <- suppressWarnings(try(get_pbp_game(selected_season), silent = T))
-        if(is.null(x)) {
-          session$sendCustomMessage(type = "message",
-                                    message = "Error: Play-By-Play Data Not Available for this Game. Please Select Another Game.")
-          plot_flag <- F
-        }
+        # x <- suppressWarnings(try(get_pbp_game(selected_season), silent = T))
+        # if(is.null(x)) {
+        #   session$sendCustomMessage(type = "message",
+        #                             message = "Error: Play-By-Play Data Not Available for this Game. Please Select Another Game.")
+        #   plot_flag <- F
+        # }
       }
       
       if(plot_flag) {

@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.2.2 (Updated 3.20.18)
+### Version 2.3 (Updated 6.21.18)
 
 library(igraph)
 library(dplyr)
@@ -11,20 +11,22 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights) {
   
   ### Read Play-by-Play File
   if(season[1] == "2016-17") {
-    x <- read.csv(paste("pbp_2016_17/", team, ".csv", sep = ""), as.is = T)
+    x <- read.csv(paste("pbp_2016_17/", gsub(" ", "_", team), ".csv", sep = ""), as.is = T)
     text <- " Assist Network for 2017-18 Returning Players"
     factor <- 0.75
   }else if(season[1] == "2017-18") {
-    x <- get_pbp(team)
-    
-    text <- " Assist Network for 2017-18 Season"
+    x <- read.csv(paste("pbp_2017_18/", gsub(" ", "_", team), ".csv", sep = ""),  as.is = T)
     factor <- 0.75
+    text <- " Assist Network for 2017-18 Season"
     x$description <- as.character(x$description)
   }else {
-    x <- suppressWarnings(try(get_pbp_game(season), silent = T))
-    if(class(x) == "try-error") {
-      return("Play-by-Play Data Not Available")
-    }
+    x <- read.csv(paste("pbp_2017_18/", gsub(" ", "_", team), ".csv", sep = ""),  as.is = T)
+    factor <- 0.75
+    x <- filter(x, game_id == season)
+    # x <- suppressWarnings(try(get_pbp_game(season), silent = T))
+    # if(class(x) == "try-error") {
+    #   return("Play-by-Play Data Not Available")
+    # }
     opp <- setdiff(c(x$away, x$home), text_team)
     text <- paste(" Assist Network vs. ", opp, sep = "")
     x$description <- as.character(x$description)
