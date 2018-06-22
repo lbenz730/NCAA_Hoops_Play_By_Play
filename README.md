@@ -9,6 +9,7 @@ __NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. The follo
 * ```get_schedule(team)```: Get a team's schedule.
 * ```get_game_ids(team)```: Get a vector of ESPN Game IDs for all games in which ```team``` plays in.
 * ```get_date(gameID)```: Gets the date of a game given an ESPN Game ID.
+* ```is.nit(gameID)```: Returns logical ```T/F``` whether or not the game was part of the NIT
 
 Note that team names must adhere to ESPN naming conventions. A full dictionary of team names used by ESPN is provided in __ids.csv__  Note that play by play data is not available for all games.
 
@@ -36,6 +37,8 @@ __Assist_Network.R:__ The function ```assist_net(team, node_col, season, rmv_ben
 __rosters_2016_17/:__ 2016-17 rosters for each team.
 
 __rosters_2017_18/:__ 2017-18 rosters for each team.
+
+__schedules_2017_18/:__ 2017-18 schedules for each team.
 
 __wp_model.R:/__ Prepares data and builds win probability model (coefficients saved as object __wp_hoops.csv__). Requires [all_games.csv](https://drive.google.com/open?id=0BzSws2ZDOraxbXF0aWNJNmxCdnM) and [2017_18_mid_season.csv](https://drive.google.com/file/d/1b7P-p1loGIghL0zDpzaox255X93Mqgkg/view?usp=sharing).
 
