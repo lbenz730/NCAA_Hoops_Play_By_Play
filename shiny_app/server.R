@@ -17,7 +17,7 @@ shinyServer(function(input, output, session) {
                    column(4, radioButtons("three_weights", label = h5("Weighted Network"),
                                           choices = list("True" = TRUE, "False" = FALSE))),
                    column(4, radioButtons("tree", label = h5("Network Structure"),
-                                          choices = list("Tree" = TRUE, "Circle" = FALSE))),
+                                          choices = list("Circle" = FALSE, "Tree" = TRUE))),
                    column(4, radioButtons("rmv_bench", label = h5("Bench Players"),
                                           choices = list("Remove" = TRUE, "Keep" = FALSE)))),
           fluidRow(column(2, offset = 2, actionButton("render_net", "Render Network")),
@@ -62,7 +62,7 @@ shinyServer(function(input, output, session) {
     else{
       html <- paste("<ul><li>", "Assist Frequency Leader: ", names(info$ast_freq)[which.max(info$ast_freq)], " (", 
                     round(max(info$ast_freq) * 100, 1), "%)</li>", sep = "")
-      html <- paste(html, "<li>", "(Assisted) Shot Frequncy Leader: ", names(info$shot_freq)[which.max(info$shot_freq)],
+      html <- paste(html, "<li>", "(Assisted) Shot Frequency Leader: ", names(info$shot_freq)[which.max(info$shot_freq)],
                     " (", round(max(info$shot_freq) * 100, 1), "%)</li>", sep = "")
       html <- paste(html, "<li>", "Page Rank MVP: ", names(info$page_ranks)[which.max(info$page_ranks)],
                     " (", round(max(info$page_ranks), 3), ")</li>", sep = "")
