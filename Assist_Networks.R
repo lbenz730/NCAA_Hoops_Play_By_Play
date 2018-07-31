@@ -1,6 +1,6 @@
 ### NCAA Assist Networks
 ### Luke Benz
-### Version 2.3 (Updated 2.19.18)
+### Version 3.0 (Updated 7.30.18)
 
 library(igraph)
 library(dplyr)
@@ -135,18 +135,29 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights, m
   
   
   ### Create/Plot Undirected Network
-  net <- graph.data.frame(network, directed = F)
+  net <- graph.data.frame(network, directed = T)
   deg <- degree(net, mode="all")
   E(net)$weight <- network$num
-  E(net)$arrow.size <- 0.3
+  E(net)$arrow.size <- 0.7
   E(net)$edge.color <- "white"
   E(net)$width <- E(net)$weight * factor
   V(net)$color <- node_col
   
-  plot(net, vertex.label.color= "black", vertex.label.cex = 0.5,
+  if(season %in% c("2016-17", "2017-18")) {
+    labs <- NA
+  }
+  else{
+    labs <- as.character(network$num)
+  }
+  
+  
+  plot(net, vertex.label.color= "black", vertex.label.cex = 1, 
+       edge.curved = 0.3, edge.label = labs, edge.label.cex = 1.2,
+       edge.label.color = "black",
        layout= ifelse(tree, layout_as_tree,layout_in_circle),
        vertex.label.family = "Arial Black", 
        main = paste(text_team, ifelse(three_weights, " Weighted", ""), text, sep = ""))  
+ 
   
   ### Add Text to Network
   text(-1.5, 1.0, paste(ifelse(three_weights, "Weighted ", ""), "Assist Frequency Leader: ", 
