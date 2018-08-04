@@ -37,6 +37,7 @@ BYU,BYU,BYU,BYU,BYU,Brigham Young,WCC,royalblue3
 Cal Poly,Cal Poly,Cal Poly,Cal Poly,Cal Poly,Cal Poly,Big West,gold
 Cal St. Fullerton,CSU Fullerton,CS Fullerton,Cal State Fullerton,Cal St. Fullerton,Cal State Fullerton,Big West,orange
 California,Cal,California,California,California,California,Pac 12,royalblue3
+California Baptist,NA,NA,NA,Cal Baptist,California Baptist,WAC,royalblue3
 Campbell,Campbell,Campbell,Campbell,Campbell,Campbell,Big South,orange
 Canisius,Canisius,Canisius,Canisius,Canisius,Canisius,MAAC,gold
 Central Ark.,Cent Arkansas,Central Arkansas,Central Arkansas,Central Arkansas,Central Arkansas,Southland,purple
@@ -104,7 +105,7 @@ Gonzaga,Gonzaga,Gonzaga,Gonzaga,Gonzaga,Gonzaga,WCC,royalblue3
 Grambling,Grambling,Grambling,Grambling,Grambling St.,Grambling State,SWAC,gold
 Grand Canyon,Grand Canyon,Grand Canyon,Grand Canyon,Grand Canyon,Grand Canyon,WAC,purple
 Green Bay,Green Bay,Green Bay,Green Bay,Green Bay,Wisconsin-Green Bay,Horizon,seagreen
-Hampton,Hampton,Hampton,Hampton,Hampton,Hampton,MEAC,blue
+Hampton,Hampton,Hampton,Hampton,Hampton,Hampton,Big South,blue
 Hartford,Hartford,Hartford,Hartford,Hartford,Hartford,Am. East,red
 Harvard,Harvard,Harvard,Harvard,Harvard,Harvard,Ivy,firebrick4
 Hawaii,Hawai'i,Hawai'i,Hawaii,Hawaii,Hawaii,Big West,forestgreen
@@ -194,9 +195,10 @@ Niagara,Niagara,Niagara,Niagara,Niagara,Niagara,MAAC,purple
 Nicholls St.,Nicholls,Nicholls,Nicholls State,Nicholls St.,Nicholls State,Southland,red
 NJIT,NJIT,NJIT,New Jersey Tech,NJIT,NJIT,A-Sun,red
 Norfolk St.,Norfolk State,Norfolk State,Norfolk State,Norfolk St.,Norfolk State,MEAC,forestgreen
+North Ala.,NA,NA,NA,North Alabama,North Ala.,A-Sun,red
 North Carolina,UNC,North Carolina,North Carolina,North Carolina,North Carolina,ACC,skyblue
 North Carolina St.,NC State,NC State,North Carolina State,North Carolina St.,N.C. State,ACC,red
-North Dakota,North Dakota,North Dakota,North Dakota,North Dakota,North Dakota,Big Sky,seagreen
+North Dakota,North Dakota,North Dakota,North Dakota,North Dakota,North Dakota,Summit,seagreen
 North Dakota St.,North Dakota St,North Dakota St,North Dakota State,North Dakota St.,North Dakota State,Summit,forestgreen
 North Florida,North Florida,North Florida,North Florida,North Florida,North Florida,A-Sun,royalblue3
 North Texas,North Texas,North Texas,North Texas,North Texas,North Texas,C-USA,seagreen
@@ -313,7 +315,7 @@ UNCG,UNCG,UNC Greensboro,UNC Greensboro,UNC Greensboro,UNC Greensboro,Southern,g
 UNCW,UNC Wilmington,UNC Wilmington,UNC Wilmington,UNC Wilmington,UNC Wilmington,CAA,seagreen
 UNI,Northern Iowa,Northern Iowa,Northern Iowa,Northern Iowa,Northern Iowa,MVC,purple
 UNLV,UNLV,UNLV,UNLV,UNLV,UNLV,MWC,red
-USC Upstate,USC Upstate,South Carolina Upstate,South Carolina Upstate,USC Upstate,South Carolina Upstate,A-Sun,forestgreen
+USC Upstate,USC Upstate,South Carolina Upstate,South Carolina Upstate,USC Upstate,South Carolina Upstate,Big South,forestgreen
 UT Arlington,UT Arlington,UT Arlington,UTA,UT Arlington,UT-Arlington,Sunbelt,orange
 UT Martin,UT Martin,UT Martin,Tennessee-Martin,Tennessee Martin,Tennessee-Martin,OVC,orange
 Utah,Utah,Utah,Utah,Utah,Utah,Pac 12,red
