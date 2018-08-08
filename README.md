@@ -3,7 +3,7 @@ Men's College Basketball Play by Play Data
 
 __NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. The following functions are available.
 
-* ```get_pbp(team)```.: Game entire 2017-18 Season's worth of play-by-play data for a given team.
+* ```get_pbp(team)```: Game entire 2017-18 Season's worth of play-by-play data for a given team.
 * ```get_pbp_game(gameIDS)```:  Get play-by-play data for a specific vector of ESPN game ids. 
 * ```get_roster(team)```: Get a particular team's roster. 
 * ```get_schedule(team)```: Get a team's schedule.
