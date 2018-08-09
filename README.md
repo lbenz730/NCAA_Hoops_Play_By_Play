@@ -1,6 +1,12 @@
 # NCAA_Hoops_Play_By_Play
 Men's College Basketball Play by Play Data
 
+__NOTE:__ As of 8/8/2018, the majority of functionality, including development of Play-by-Play scrapers, assist networks, and 
+win probability charts has moved to my new R package, [ncaahoopR](https://github.com/lbenz730/ncaahoopR). Data and other miscellaneous
+files will still be stored here, but core scripts whose functionally has been incorporated into the  ```ncaahoopR``` package will be updated with the package, not in this repository.
+
+
+
 __NCAA_Hoops_PBP_Scraper.R:__ An R file used to scrape data from ESPN. The following functions are available.
 
 * ```get_pbp(team)```: Game entire 2017-18 Season's worth of play-by-play data for a given team.
