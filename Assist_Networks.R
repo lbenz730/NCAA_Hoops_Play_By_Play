@@ -8,6 +8,7 @@ library(dplyr)
 assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights, message = NA) {
   dict <- read.csv("ESPN_NCAA_Dict.csv", as.is = T)
   text_team <- dict$ESPN_PBP[dict$ESPN == team]
+  text_team <- text_team[!is.na(text_team)]
   
   ### Read Play-by-Play File
   if(season[1] == "2016-17") {
@@ -46,9 +47,7 @@ assist_net <- function(team, node_col, season, rmv_bench, tree, three_weights, m
   games <- unique(x$game_id)
   ast <- grep("Assisted", x$description)
   x <- x[ast, ]
-  if(team == "VMI") {
-    roster <- roster[-8,]
-  }
+
   
   ### Get Ast/Shot from ESPN Play Description
   splitplay <- function(description) {
