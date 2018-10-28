@@ -37,7 +37,7 @@ BYU,BYU,BYU,BYU,BYU,Brigham Young,WCC,royalblue3
 Cal Poly,Cal Poly,Cal Poly,Cal Poly,Cal Poly,Cal Poly,Big West,gold
 Cal St. Fullerton,CSU Fullerton,CS Fullerton,Cal State Fullerton,Cal St. Fullerton,Cal State Fullerton,Big West,orange
 California,Cal,California,California,California,California,Pac 12,royalblue3
-California Baptist,NA,NA,NA,Cal Baptist,California Baptist,WAC,royalblue3
+California Baptist,Cal Baptist,Cal Baptist,Cal Baptist,Cal Baptist,California Baptist,WAC,royalblue3
 Campbell,Campbell,Campbell,Campbell,Campbell,Campbell,Big South,orange
 Canisius,Canisius,Canisius,Canisius,Canisius,Canisius,MAAC,gold
 Central Ark.,Cent Arkansas,Central Arkansas,Central Arkansas,Central Arkansas,Central Arkansas,Southland,purple
@@ -141,7 +141,7 @@ La.-Monroe,UL Monroe,UL Monroe,ULM,Louisiana Monroe,Louisiana-Monroe,Sunbelt,mar
 Lafayette,Lafayette,Lafayette,Lafayette,Lafayette,Lafayette,Patriot,maroon
 Lamar University,Lamar,Lamar,Lamar,Lamar,Lamar,Southland,red
 Lehigh,Lehigh,Lehigh,Lehigh,Lehigh,Lehigh,Patriot,brown
-Liberty,Liberty,Liberty,Liberty,Liberty,Liberty,Big South,royalblue3
+Liberty,Liberty,Liberty,Liberty,Liberty,Liberty,A-Sun,royalblue3
 Lipscomb,Lipscomb,Lipscomb,Lipscomb,Lipscomb,Lipscomb,A-Sun,purple
 Little Rock,Little Rock,Little Rock,Arkansas-Little Rock,Little Rock,Arkansas-Little Rock,Sunbelt,maroon
 LIU Brooklyn,LIU Brooklyn,LIU Brooklyn,Long Island,LIU Brooklyn,Long Island,NEC,gold
@@ -195,7 +195,7 @@ Niagara,Niagara,Niagara,Niagara,Niagara,Niagara,MAAC,purple
 Nicholls St.,Nicholls,Nicholls,Nicholls State,Nicholls St.,Nicholls State,Southland,red
 NJIT,NJIT,NJIT,New Jersey Tech,NJIT,NJIT,A-Sun,red
 Norfolk St.,Norfolk State,Norfolk State,Norfolk State,Norfolk St.,Norfolk State,MEAC,forestgreen
-North Ala.,NA,NA,NA,North Alabama,North Ala.,A-Sun,red
+North Ala.,North Alabama,North Alabama,North Alabama,North Alabama,North Ala.,A-Sun,red
 North Carolina,UNC,North Carolina,North Carolina,North Carolina,North Carolina,ACC,skyblue
 North Carolina St.,NC State,NC State,North Carolina State,North Carolina St.,N.C. State,ACC,red
 North Dakota,North Dakota,North Dakota,North Dakota,North Dakota,North Dakota,Summit,seagreen
