@@ -4,20 +4,20 @@
 "Alabama","Alabama","SEC","#9E1B32","#828A8F","#FFFFFF",NA,NA,NA
 "Albany (NY)","Albany","Am. East","#461660","#EEB211",NA,NA,NA,NA
 "Appalachian St.","Appalachian St","Sunbelt","#222222","#FFCC00",NA,NA,NA,NA
-"Arizona","Arizona","Pac 12","#CC0033",NA,NA,NA,NA,NA
+"Arizona","Arizona","Pac 12","#CC0033","#003366",NA,NA,NA,NA
 "Arizona St.","Arizona State","Pac 12","#8C1D40","#FFC627",NA,NA,NA,NA
 "Arkansas","Arkansas","SEC","#9D2235","#FFFFFF",NA,NA,NA,NA
 "Arkansas St.","Arkansas State","Sunbelt","#CC092F","#000000",NA,NA,NA,NA
-"Auburn","Auburn","SEC","#0C2340",NA,NA,NA,NA,NA
+"Auburn","Auburn","SEC","#0C2340","#E87722",NA,NA,NA,NA
 "Ball St.","Ball State","MAC","#BA0C2F","#000000",NA,NA,NA,NA
-"Baylor","Baylor","Big 12","#003015",NA,NA,NA,NA,NA
+"Baylor","Baylor","Big 12","#003015","#FECB00",NA,NA,NA,NA
 "Binghamton","Binghamton","Am. East","#005A43","#169B62","#BF0D3E","#B1B3B3",NA,NA
 "Boise St.","Boise State","MWC","#D64309","#0033A0",NA,NA,NA,NA
 "Boston College","Boston College","ACC","#98002E","#BC9B6A",NA,NA,NA,NA
 "Bowling Green","Bowling Green","MAC","#FE5000","#4F2C1D","#CDA077","#000000",NA,NA
 "Bradley","Bradley","MVC","#A50000","#999999",NA,NA,NA,NA
 "Brown","Brown","Ivy","#4E3629","#7C2529","#E4002B","#000000",NA,NA
-"Buffalo","Buffalo","MAC","#005BBB",NA,NA,NA,NA,NA
+"Buffalo","Buffalo","MAC","#005BBB","#FFFFFF",NA,NA,NA,NA
 "Butler","Butler","Big East","#13294B","#747678","#D1E0D7","#000000",NA,NA
 "BYU","BYU","WCC","#002255","#C5AF7D",NA,NA,NA,NA
 "Cal Poly","Cal Poly","Big West","#003831","#FFE395","#B38F4F","#000000",NA,NA
@@ -39,7 +39,7 @@
 "CSU Bakersfield","CSU Bakersfield","WAC","#005DAA","#FFD200",NA,NA,NA,NA
 "CSUN","CSU Northridge","Big West","#CE1126","#D1CEC6","#000000",NA,NA,NA
 "Dartmouth","Dartmouth","Ivy","#046A38","#000000",NA,NA,NA,NA
-"Davidson","Davidson","A-10","#AC1A2F",NA,NA,NA,NA,NA
+"Davidson","Davidson","A-10","#AC1A2F","#000000",NA,NA,NA,NA
 "Dayton","Dayton","A-10","#CE1141","#004B8D","#F80228","#0200D1",NA,NA
 "Denver","Denver","Summit","#8B2332","#8B6F4B",NA,NA,NA,NA
 "DePaul","DePaul","Big East","#005EB8","#E4002B",NA,NA,NA,NA
@@ -57,7 +57,7 @@
 "Fla. Atlantic","FAU","C-USA","#003366","#CC0000","#8A8D8F","#CCCCCC",NA,NA
 "Florida","Florida","SEC","#0021A5","#FA4616",NA,NA,NA,NA
 "Florida St.","Florida State","ACC","#782F40","#CEB888","#FFFFFF","#000000",NA,NA
-"Fordham","Fordham","A-10","#860038",NA,NA,NA,NA,NA
+"Fordham","Fordham","A-10","#860038","#FFFFFF",NA,NA,NA,NA
 "Fresno St.","Fresno State","MWC","#DB0032","#002E6D","#007934",NA,NA,NA
 "Ga. Southern","Ga Southern","Sunbelt","#011E41","#A3AAAE","#87714D",NA,NA,NA
 "George Mason","George Mason","A-10","#006633","#FFCC33","#000000",NA,NA,NA
@@ -75,10 +75,10 @@
 "Houston","Houston","AAC","#C8102E","#76232F","#B2B4B2",NA,NA,NA
 "Idaho","Idaho","Big Sky","#EAAB00","#86754D","#808080","#000000",NA,NA
 "Idaho St.","Idaho State","Big Sky","#000000","#F9A81A",NA,NA,NA,NA
-"Illinois","Illinois","Big 10","#13294B",NA,NA,NA,NA,NA
+"Illinois","Illinois","Big 10","#13294B","#E84A27",NA,NA,NA,NA
 "Illinois St.","Illinois State","MVC","#CE1126","#F9DD16","#000000",NA,NA,NA
 "Indiana","Indiana","Big 10","#990000","#EEEDEB",NA,NA,NA,NA
-"Indiana St.","Indiana State","MVC","#0142BC",NA,NA,NA,NA,NA
+"Indiana St.","Indiana State","MVC","#0142BC","#FFFFFF",NA,NA,NA,NA
 "Iona","Iona","MAAC","#6F2C3F","#F2A900",NA,NA,NA,NA
 "Iowa","Iowa","Big 10","#FFCD00","#000000",NA,NA,NA,NA
 "Iowa St.","Iowa State","Big 12","#C8102E","#F1BE48",NA,NA,NA,NA
@@ -99,9 +99,9 @@
 "Louisville","Louisville","ACC","#AD0000","#000000","#FDB913","#CCCCCC",NA,NA
 "Loyola Chicago","Loyola-Chicago","MVC","#922247","#FEBD18",NA,NA,NA,NA
 "Loyola Marymount","Loyola Mary","WCC","#B62B3A","#00447C","#617080","#231F20",NA,NA
-"LSU","LSU","SEC","#461D7C",NA,NA,NA,NA,NA
+"LSU","LSU","SEC","#461D7C","#FDD023",NA,NA,NA,NA
 "Maine","Maine","Am. East","#003263","#B0D7FF","#AB0634","#908C89","#000000",NA
-"Manhattan","Manhattan","MAAC","#00703C",NA,NA,NA,NA,NA
+"Manhattan","Manhattan","MAAC","#00703C","#FFFFFF",NA,NA,NA,NA
 "Marist","Marist","MAAC","#C8102E","#B2B2B2","#000000",NA,NA,NA
 "Marquette","Marquette","Big East","#003366","#FFCC00",NA,NA,NA,NA
 "Marshall","Marshall","C-USA","#00B140","#A2AAAD","#693F23","#AD7C59","#27251F",NA
@@ -111,32 +111,32 @@
 "Miami (FL)","Miami","ACC","#F47321","#005030","#FFFFFF",NA,NA,NA
 "Miami (OH)","Miami (OH)","MAC","#B61E2E","#000000",NA,NA,NA,NA
 "Michigan","Michigan","Big 10","#00274C","#FFCB05",NA,NA,NA,NA
-"Michigan St.","Michigan State","Big 10","#18453B",NA,NA,NA,NA,NA
+"Michigan St.","Michigan State","Big 10","#18453B","#FFFFFF",NA,NA,NA,NA
 "Middle Tenn.","Mid Tennessee","C-USA","#0066CC","#69B3E7",NA,NA,NA,NA
 "Milwaukee","Milwaukee","Horizon","#FFBD00","#CCCCCC",NA,NA,NA,NA
-"Minnesota","Minnesota","Big 10","#7A0019",NA,NA,NA,NA,NA
+"Minnesota","Minnesota","Big 10","#7A0019","#FFCC33",NA,NA,NA,NA
 "Mississippi St.","Miss St","SEC","#660000","#FFFFFF","#CCCCCC","#75787B",NA,NA
 "Missouri","Missouri","SEC","#000000","#F1B82D",NA,NA,NA,NA
 "Missouri St.","Missouri State","MVC","#5E0009","#000000",NA,NA,NA,NA
 "Monmouth","Monmouth","MAAC","#041E42","#53565A",NA,NA,NA,NA
-"Montana","Montana","Big Sky","#999999",NA,NA,NA,NA,NA
-"Montana St.","Montana State","Big Sky","#B9975B",NA,NA,NA,NA,NA
+"Montana","Montana","Big Sky","#999999","#999999",NA,NA,NA,NA
+"Montana St.","Montana State","Big Sky","#B9975B","#B9975B",NA,NA,NA,NA
 "Navy","Navy","Patriot","#00205B","#C5B783",NA,NA,NA,NA
 "NC State","NC State","ACC","#CC0000","#000000","#FFFFFF",NA,NA,NA
-"Nebraska","Nebraska","Big 10","#E41C38",NA,NA,NA,NA,NA
+"Nebraska","Nebraska","Big 10","#E41C38","#5F6A72","#000000",NA,NA,NA
 "Nevada","Nevada","MWC","#003366","#807F84",NA,NA,NA,NA
 "New Hampshire","UNH","Am. East","#041E42","#BBBCBC",NA,NA,NA,NA
 "New Mexico","New Mexico","MWC","#BA0C2F","#A7A8AA","#63666A","#007A86","#000000",NA
 "New Mexico St.","New Mexico St","WAC","#861F41","#97999B","#000000",NA,NA,NA
-"Niagara","Niagara","MAAC","#582C83",NA,NA,NA,NA,NA
+"Niagara","Niagara","MAAC","#582C83","#FFFFFF",NA,NA,NA,NA
 "NJIT","NJIT","A-Sun","#D22630","#071D49","#C1C6C8",NA,NA,NA
 "North Ala.","North Alabama","A-Sun","#46166B","#DB9F11","#5F6062",NA,NA,NA
 "North Carolina","UNC","ACC","#7BAFD4","#FFFFFF","#13294B","#000000","#8D9092","#A2AAAD"
 "North Dakota St.","North Dakota St","Summit","#0A5640","#FFC72A",NA,NA,NA,NA
 "North Florida","North Florida","A-Sun","#00246B","#D9D9D9",NA,NA,NA,NA
-"North Texas","North Texas","C-USA","#00853E",NA,NA,NA,NA,NA
+"North Texas","North Texas","C-USA","#00853E","#000000",NA,NA,NA,NA
 "Northern Ariz.","N Arizona","Big Sky","#FFD200","#FBB040",NA,NA,NA,NA
-"Northern Colo.","N Colorado","Big Sky","#F6B000",NA,NA,NA,NA,NA
+"Northern Colo.","N Colorado","Big Sky","#F6B000","#F6B000",NA,NA,NA,NA
 "Northern Ill.","N Illinois","MAC","#BA0C2F","#8A8D8F","#000000",NA,NA,NA
 "Northern Ky.","N Kentucky","Horizon","#FFC72C","#000000",NA,NA,NA,NA
 "Northwestern","Northwestern","Big 10","#4E2A84","#FFFFFF",NA,NA,NA,NA
@@ -160,14 +160,14 @@
 "Portland","Portland","WCC","#1E1656","#5E6A71",NA,NA,NA,NA
 "Portland St.","Portland State","Big Sky","#154734","#FFFFFF","#373A36","#2C2A29",NA,NA
 "Princeton","Princeton","Ivy","#FF671F","#000000",NA,NA,NA,NA
-"Providence","Providence","Big East","#8A8D8F",NA,NA,NA,NA,NA
-"Purdue","Purdue","Big 10","#CEB888",NA,NA,NA,NA,NA
+"Providence","Providence","Big East","#000000","#8A8D8F","#FFFFFF",NA,NA,NA
+"Purdue","Purdue","Big 10","#CEB888","#000000","#9D968D","#373A36",NA,NA
 "Purdue Fort Wayne","Fort Wayne","Summit","#002F6C","#000000","#63666A","#97999B","#BBBCBC",NA
 "Rhode Island","URI","A-10","#68ABE8","#002147",NA,NA,NA,NA
-"Rice","Rice","C-USA","#00205B",NA,NA,NA,NA,NA
+"Rice","Rice","C-USA","#00205B","#C1C6C8",NA,NA,NA,NA
 "Richmond","Richmond","A-10","#000066","#990000",NA,NA,NA,NA
 "Rider","Rider","MAAC","#981E32","#6C6F70",NA,NA,NA,NA
-"Rutgers","Rutgers","Big 10","#CC0033",NA,NA,NA,NA,NA
+"Rutgers","Rutgers","Big 10","#CC0033","#5F6A72","#000000",NA,NA,NA
 "Sacramento St.","Sacramento St","Big Sky","#043927","#C4B581",NA,NA,NA,NA
 "Saint Joseph's","Saint Joe's","A-10","#9E1B32","#6C6F70",NA,NA,NA,NA
 "Saint Louis","Saint Louis","A-10","#003DA5","#C8C9C7",NA,NA,NA,NA
@@ -177,7 +177,7 @@
 "San Diego St.","San Diego State","MWC","#A6192E","#000000","#FFFFFF",NA,NA,NA
 "San Francisco","San Francisco","WCC","#FDBB30","#00543C","#919194",NA,NA,NA
 "San Jose St.","San Jose State","MWC","#0055A2","#E5A823","#939597",NA,NA,NA
-"Santa Clara","Santa Clara","WCC","#862633",NA,NA,NA,NA,NA
+"Santa Clara","Santa Clara","WCC","#862633","#FFFFFF",NA,NA,NA,NA
 "Seattle U","Seattle","WAC","#AA0000","#333333",NA,NA,NA,NA
 "Seton Hall","Seton Hall","Big East","#004488","#A2AAAD",NA,NA,NA,NA
 "Siena","Siena","MAAC","#FFC72C","#C8102E","#006747","#693F23",NA,NA
@@ -186,7 +186,7 @@
 "South Dakota","South Dakota","Summit","#AD0000","#B4B4B4","#000000",NA,NA,NA
 "South Dakota St.","South Dakota St","Summit","#0033A0","#FFD100",NA,NA,NA,NA
 "South Fla.","USF","AAC","#006747","#CFC493",NA,NA,NA,NA
-"Southern California","USC","Pac 12","#FFC72C",NA,NA,NA,NA,NA
+"Southern California","USC","Pac 12","#FFC72C","#FFC72C",NA,NA,NA,NA
 "Southern Ill.","S Illinois","MVC","#720000","#000000",NA,NA,NA,NA
 "Southern Miss.","Southern Miss","C-USA","#000000","#FFAB00",NA,NA,NA,NA
 "Southern Utah","Southern Utah","Big Sky","#000000","#FFFFFF",NA,NA,NA,NA
@@ -210,7 +210,7 @@
 "UC Davis","UC Davis","Big West","#002855","#B3A369",NA,NA,NA,NA
 "UC Irvine","UC Irvine","Big West","#0C2340","#FFC72C",NA,NA,NA,NA
 "UC Riverside","UC Riverside","Big West","#2D6CC0","#003066","#F1AB00","#7A6E67","#000000",NA
-"UCLA","UCLA","Pac 12","#2D68C4","#F2A900","#3284BF","#FFE800",NA,NA
+"UCLA","UCLA","Pac 12","#F2A900","#FFE800",NA,NA,NA,NA
 "UIC","UIC","Horizon","#AC1E2D","#041E42","#FACC09",NA,NA,NA
 "UMass Lowell","UMass Lowell","Am. East","#003DA5","#C8102E",NA,NA,NA,NA
 "UMBC","UMBC","Am. East","#B18906","#FFC20E","#000000","#ED1C24",NA,NA
@@ -234,16 +234,16 @@
 "Virginia Tech","Virginia Tech","ACC","#630031","#CF4420",NA,NA,NA,NA
 "Wake Forest","Wake Forest","ACC","#A67F31","#000000",NA,NA,NA,NA
 "Washington","Washington","Pac 12","#4B2E83","#B7A57A","#85754D",NA,NA,NA
-"Washington St.","Washington St","Pac 12","#981E32",NA,NA,NA,NA,NA
+"Washington St.","Washington St","Pac 12","#981E32","#5E6A71",NA,NA,NA,NA
 "Weber St.","Weber State","Big Sky","#A1A1A4","#130C0E",NA,NA,NA,NA
 "West Virginia","West Virginia","Big 12","#002855","#EAAA00",NA,NA,NA,NA
 "Western Ill.","W Illinois","Summit","#663399","#FFCC00",NA,NA,NA,NA
 "Western Ky.","W Kentucky","C-USA","#C60C30","#1E1E1E","#A2A4A3",NA,NA,NA
 "Western Mich.","W Michigan","MAC","#6C4023","#B5A167","#AAA8AA","#000000",NA,NA
-"Wichita St.","Wichita State","AAC","#FFCD00",NA,NA,NA,NA,NA
+"Wichita St.","Wichita State","AAC","#FFCD00","#000000",NA,NA,NA,NA
 "Wisconsin","Wisconsin","Big 10","#C5050C","#9B0000",NA,NA,NA,NA
 "Wright St.","Wright State","Horizon","#026937","#CEA052","#FFE1A5","#DE6328",NA,NA
 "Wyoming","Wyoming","MWC","#FFC425","#492F24",NA,NA,NA,NA
 "Xavier","Xavier","Big East","#0C2340","#9EA2A2","#0099CC",NA,NA,NA
-"Yale","Yale","Ivy","#00356B",NA,NA,NA,NA,NA
+"Yale","Yale","Ivy","#00356B","#FFFFFF",NA,NA,NA,NA
 "Youngstown St.","Youngstown St","Horizon","#C8102E","#F3D54E",NA,NA,NA,NA
