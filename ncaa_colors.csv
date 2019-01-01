@@ -1,0 +1,249 @@
+"ncaa_name","espn_name","conference","primary_color","secondary_color","tertiary_color","color_4","color_5","color_6"
+"Air Force","Air Force","MWC","#003087","#8A8D8F","#B1B3B3","#FFC72C","#000000",NA
+"Akron","Akron","MAC","#041E42","#A89968",NA,NA,NA,NA
+"Alabama","Alabama","SEC","#9e1b32","#828a8f","#ffffff",NA,NA,NA
+"Albany (NY)","Albany","Am. East","#461660","#eeb211",NA,NA,NA,NA
+"Appalachian St.","Appalachian St","Sunbelt","#222222","#ffcc00",NA,NA,NA,NA
+"Arizona","Arizona","Pac 12","#CC0033",NA,NA,NA,NA,NA
+"Arizona St.","Arizona State","Pac 12","#8C1D40","#FFC627",NA,NA,NA,NA
+"Arkansas","Arkansas","SEC","#FFFFFF",NA,NA,NA,NA,NA
+"Arkansas St.","Arkansas State","Sunbelt","#cc092f","#000000",NA,NA,NA,NA
+"Auburn","Auburn","SEC","#0C2340",NA,NA,NA,NA,NA
+"Ball St.","Ball State","MAC","#BA0C2F","#000000",NA,NA,NA,NA
+"Baylor","Baylor","Big 12","#003015",NA,NA,NA,NA,NA
+"Binghamton","Binghamton","Am. East","#005A43","#169B62","#BF0D3E","#B1B3B3",NA,NA
+"Boise St.","Boise State","MWC","#D64309","#0033A0",NA,NA,NA,NA
+"Boston College","Boston College","ACC","#98002E","#BC9B6A",NA,NA,NA,NA
+"Bowling Green","Bowling Green","MAC","#FE5000","#4F2C1D","#CDA077","#000000",NA,NA
+"Bradley","Bradley","MVC","#A50000","#999999",NA,NA,NA,NA
+"Brown","Brown","Ivy","#4E3629","#7C2529","#E4002B","#000000",NA,NA
+"Buffalo","Buffalo","MAC","#005BBB",NA,NA,NA,NA,NA
+"Butler","Butler","Big East","#13294b","#747678","#d1e0d7","#000000",NA,NA
+"BYU","BYU","WCC","#c5af7d","#c5af7d",NA,NA,NA,NA
+"Cal Poly","Cal Poly","Big West","#003831","#FFE395","#B38F4F","#000000",NA,NA
+"Cal St. Fullerton","CSU Fullerton","Big West","#00274C","#DC8218",NA,NA,NA,NA
+"California","Cal","Pac 12","#003262","#3B7EA1","#FDB515","#c4820e",NA,NA
+"Canisius","Canisius","MAAC","#0C2340","#ffba00",NA,NA,NA,NA
+"Central Mich.","Cent Michigan","MAC","#6A0032","#FFC82E",NA,NA,NA,NA
+"Charlotte","Charlotte","C-USA","#046A38","#B9975B","#27251F",NA,NA,NA
+"Chicago St.","Chicago State","WAC","#006666","#000000",NA,NA,NA,NA
+"Cincinnati","Cincinnati","AAC","#E00122","#000000",NA,NA,NA,NA
+"Clemson","Clemson","ACC","#F56600","#522D80",NA,NA,NA,NA
+"Cleveland St.","Cleveland State","Horizon","#006747","#000000",NA,NA,NA,NA
+"Coastal Caro.","C. Carolina","Sunbelt","#006f71","#A27752","#111111",NA,NA,NA
+"Colorado","Colorado","Pac 12","#CFB87C","#000000","#565A5C","#A2A4A3","#4b92db",NA
+"Colorado St.","Colorado State","MWC","#1E4D2B","#C8C372",NA,NA,NA,NA
+"Columbia","Columbia","Ivy","#003865","#9BCBEB",NA,NA,NA,NA
+"Cornell","Cornell","Ivy","#B31B1B","#5e3920","#89572e","#000000",NA,NA
+"Creighton","Creighton","Big East","#005ca9","#00235D","#6CADDE","#828282","#C8C8C8","#8A8D8F"
+"CSU Bakersfield","CSU Bakersfield","WAC","#005daa","#FFD200",NA,NA,NA,NA
+"CSUN","CSU Northridge","Big West","#CE1126","#D1CEC6","#000000",NA,NA,NA
+"Dartmouth","Dartmouth","Ivy","#046A38","#000000",NA,NA,NA,NA
+"Davidson","Davidson","A-10","#ac1a2f",NA,NA,NA,NA,NA
+"Dayton","Dayton","A-10","#CE1141","#004B8D","#F80228","#0200D1",NA,NA
+"Denver","Denver","Summit","#8b2332","#8b6f4b",NA,NA,NA,NA
+"DePaul","DePaul","Big East","#005EB8","#E4002B",NA,NA,NA,NA
+"Detroit Mercy","Detroit Mercy","Horizon","#A6093D","#002D72","#D7D2CB",NA,NA,NA
+"Drake","Drake","MVC","#004477","#999999",NA,NA,NA,NA
+"Duke","Duke","ACC","#001A57","#003366","#0736A4","#235f9c",NA,NA
+"Duquesne","Duquesne","A-10","#041E42","#BA0C2F","#000000",NA,NA,NA
+"East Carolina","ECU","AAC","#592A8A","#FDC82F",NA,NA,NA,NA
+"Eastern Mich.","E Michigan","MAC","#006633","#000000",NA,NA,NA,NA
+"Eastern Wash.","E Washington","Big Sky","#FFF","#000","#6d6e71","src=""da",NA,NA
+"Evansville","Evansville","MVC","#52237f","#f36f21",NA,NA,NA,NA
+"Fairfield","Fairfield","MAAC","#C8102E","#A2AAAD","#000000",NA,NA,NA
+"FGCU","FGCU","ASun","#002D72","#007749","#B9975B",NA,NA,NA
+"FIU","FIU","C-USA","#081E3F","#B6862C",NA,NA,NA,NA
+"Fla. Atlantic","FAU","C-USA","#003366","#CC0000","#8A8D8F","#CCCCCC",NA,NA
+"Florida","Florida","SEC","#0021A5","#FA4616",NA,NA,NA,NA
+"Florida St.","Florida State","ACC","#782F40","#CEB888","#FFFFFF","#000000",NA,NA
+"Fordham","Fordham","A-10","#860038",NA,NA,NA,NA,NA
+"Fresno St.","Fresno State","MWC","#db0032","#002e6d","#007934",NA,NA,NA
+"Ga. Southern","Ga Southern","Sunbelt","#011e41","#A3AAAE","#87714D",NA,NA,NA
+"George Mason","George Mason","A-10","#006633","#FFCC33","#000000",NA,NA,NA
+"George Washington","G Washington","A-10","#e2cb92","#002654",NA,NA,NA,NA
+"Georgetown","Georgetown","Big East","#041E42","#8D817B",NA,NA,NA,NA
+"Georgia","Georgia","SEC","#BA0C2F","#000000","#FFFFFF",NA,NA,NA
+"Georgia St.","Georgia State","Sunbelt","#0039A6","#C60C30","#000000",NA,NA,NA
+"Georgia Tech","Georgia Tech","ACC","#B3A369","#A28D5B","#003057",NA,NA,NA
+"Gonzaga","Gonzaga","WCC","#041E42","#C8102E","#C1C6C8",NA,NA,NA
+"Grand Canyon","Grand Canyon","WAC","#522398","#000000",NA,NA,NA,NA
+"Green Bay","Green Bay","Horizon","#006747","#9D2235","#8A8D8F",NA,NA,NA
+"Hartford","Hartford","Am. East","#c02427","#0f0708",NA,NA,NA,NA
+"Harvard","Harvard","Ivy","","#000000","#808285","#B6B6B6",NA,NA
+"Hawaii","Hawai'i","WAC","#024731","#c8c8c8","#00000",NA,NA,NA
+"Houston","Houston","AAC","#C8102E","#76232F","#B2B4B2",NA,NA,NA
+"Idaho","Idaho","Big Sky","#EAAB00","#86754D","#808080","#000000","src=""da",NA
+"Idaho St.","Idaho State","Big Sky","#000000","#F9A81A","src=""da",NA,NA,NA
+"Illinois","Illinois","Big 10","#13294b",NA,NA,NA,NA,NA
+"Illinois St.","Illinois State","MVC","#ce1126","#F9DD16","#000000",NA,NA,NA
+"Indiana","Indiana","Big 10","#990000","#EEEDEB",NA,NA,NA,NA
+"Indiana St.","Indiana State","MVC","#0142BC",NA,NA,NA,NA,NA
+"Iona","Iona","MAAC","#6F2C3F","#F2A900",NA,NA,NA,NA
+"Iowa","Iowa","Big 10","#FFCD00","#000000",NA,NA,NA,NA
+"Iowa St.","Iowa State","Big 12","#C8102E","#F1BE48",NA,NA,NA,NA
+"IUPUI","IUPUI","Horizon","#9D2235","#DFD1A7","#000000",NA,NA,NA
+"Jacksonville St.","Jacksonville St","ASun","#004E44","#898a8d","#BBBBBB","#000000",NA,NA
+"Kansas","Kansas","Big 12","#0051BA","#E8000D","#ffc82d","#85898a",NA,NA
+"Kansas St.","Kansas State","Big 12","#512888","#d1d1d1","#a7a7a7","#FFFFFF","#000000",NA
+"Kennesaw St.","Kennesaw State","ASun","#FDBB30","#0B1315","#C5C6C8",NA,NA,NA
+"Kent St.","Kent State","MAC","#002664","#EAAB00",NA,NA,NA,NA
+"Kentucky","Kentucky","SEC","#0033a0","#FFFFFF","#000000",NA,NA,NA
+"La Salle","La Salle","A-10","#ffcc00","#003366",NA,NA,NA,NA
+"La.-Monroe","UL Monroe","Sunbelt","#800029","#BD955A","#646469","#dad86d",NA,NA
+"Lipscomb","Lipscomb","ASun","#331E54","#F4AA00","#000000",NA,NA,NA
+"Little Rock","Little Rock","Sunbelt","#6e2639","#A7A9AC",NA,NA,NA,NA
+"Long Beach St.","Long Beach St","Big West","#ffc72a","#000000",NA,NA,NA,NA
+"Louisiana","Louisiana","Sunbelt","#ce181e","#0a0203","#c1c5c9","#f18c21",NA,NA
+"Louisiana Tech","LA Tech","C-USA","#E31B23","#a2aaad","#111111","src=""da",NA,NA
+"Louisville","Louisville","ACC","#AD0000","#000000","#FDB913","#CCCCCC",NA,NA
+"Loyola Chicago","Loyola-Chicago","MVC","#922247","#FEBD18",NA,NA,NA,NA
+"Loyola Marymount","Loyola Mary","WCC","#b62b3a","#00447c","#617080","#231f20",NA,NA
+"LSU","LSU","SEC","#461D7C",NA,NA,NA,NA,NA
+"Maine","Maine","Am. East","#003263","#B0D7FF","#AB0634","#908C89","#000000",NA
+"Manhattan","Manhattan","MAAC","#00703C",NA,NA,NA,NA,NA
+"Marist","Marist","MAAC","#C8102E","#b2b2b2","#000000",NA,NA,NA
+"Marquette","Marquette","Big East","#003366","#ffcc00",NA,NA,NA,NA
+"Marshall","Marshall","C-USA","#00B140","#A2AAAD","#693F23","#AD7C59","#27251F",NA
+"Maryland","Maryland","Big 10","#E03a3e","#ffd520","#FFFFFF","#000000",NA,NA
+"Massachusetts","UMass","A-10","#971B2F","#572932","#B1B3B3","#000000",NA,NA
+"Memphis","Memphis","AAC","#003087","#898D8D",NA,NA,NA,NA
+"Miami (FL)","Miami","ACC","#F47321","#005030","#FFFFFF",NA,NA,NA
+"Miami (OH)","Miami (OH)","MAC","#b61e2e","#000000",NA,NA,NA,NA
+"Michigan","Michigan","Big 10","#00274c","#ffcb05",NA,NA,NA,NA
+"Michigan St.","Michigan State","Big 10","#18453B",NA,NA,NA,NA,NA
+"Middle Tenn.","Mid Tennessee","C-USA","#0066CC","#69B3E7","src=""da",NA,NA,NA
+"Milwaukee","Milwaukee","Horizon","#FFBD00","#CCCCCC",NA,NA,NA,NA
+"Minnesota","Minnesota","Big 10","#7A0019",NA,NA,NA,NA,NA
+"Mississippi St.","Miss St","SEC","#660000","#ffffff","#CCCCCC","#75787B",NA,NA
+"Missouri","Missouri","SEC","#000000","#F1B82D",NA,NA,NA,NA
+"Missouri St.","Missouri State","MVC","#5E0009","#000000",NA,NA,NA,NA
+"Monmouth","Monmouth","MAAC","#041E42","#53565A",NA,NA,NA,NA
+"Montana","Montana","Big Sky","#999999","src=""da",NA,NA,NA,NA
+"Montana St.","Montana State","Big Sky","#B9975B","!import",NA,NA,NA,NA
+"Navy","Navy","AAC","#C5B783","#C5B783",NA,NA,NA,NA
+"NC State","NC State","ACC","#CC0000","#000000","#FFFFFF",NA,NA,NA
+"Nebraska","Nebraska","Big 10","#e41c38",NA,NA,NA,NA,NA
+"Nevada","Nevada","MWC","#003366","#807f84",NA,NA,NA,NA
+"New Hampshire","UNH","Am. East","#041e42","#BBBCBC",NA,NA,NA,NA
+"New Mexico","New Mexico","MWC","#BA0C2F","#a7a8aa","#63666A","#007A86","#000000",NA
+"New Mexico St.","New Mexico St","WAC","#861F41","#97999B","#000000",NA,NA,NA
+"Niagara","Niagara","MAAC","#582C83",NA,NA,NA,NA,NA
+"NJIT","NJIT","ASun","#D22630","#071D49","#C1C6C8",NA,NA,NA
+"North Ala.","North Alabama","ASun","#46166B","#DB9F11","#5F6062",NA,NA,NA
+"North Carolina","UNC","ACC","#7BAFD4","#FFF","#13294B","#000","#8D9092","#A2AAAD"
+"North Dakota St.","North Dakota St","Summit","#0a5640","#ffc72a",NA,NA,NA,NA
+"North Florida","North Florida","ASun","#00246B","#D9D9D9",NA,NA,NA,NA
+"North Texas","North Texas","C-USA","#00853E","src=""da",NA,NA,NA,NA
+"Northern Ariz.","N Arizona","Big Sky","#FFD200","#FBB040","src=""da",NA,NA,NA
+"Northern Colo.","N Colorado","Big Sky","#f6b000","src=""da",NA,NA,NA,NA
+"Northern Ill.","N Illinois","MAC","#BA0C2F","#8A8D8F","#000000",NA,NA,NA
+"Northern Ky.","N Kentucky","Horizon","#FFC72C","#000000",NA,NA,NA,NA
+"Northwestern","Northwestern","Big 10","#4E2A84","#FFFFFF",NA,NA,NA,NA
+"Notre Dame","Notre Dame","ACC","#0C2340","#c99700","#Ae9142","#00843d",NA,NA
+"Oakland","Oakland","Horizon","#B59A57","#000000",NA,NA,NA,NA
+"Ohio","Ohio","MAC","#00694E","#CDA077",NA,NA,NA,NA
+"Ohio St.","Ohio State","Big 10","#BB0000","#666666",NA,NA,NA,NA
+"Oklahoma","Oklahoma","Big 12","#841617","#FDF9D8",NA,NA,NA,NA
+"Oklahoma St.","Oklahoma State","Big 12","#FF7300","#FF9900","#bebebe","#000000",NA,NA
+"Old Dominion","Old Dominion","C-USA","#003057","#92C1E9","src=""da",NA,NA,NA
+"Ole Miss","Ole Miss","SEC","#CE1126","#14213D","#FFF","src=""da",NA,NA
+"Omaha","Omaha","Summit","#000000","#D71920","#636568",NA,NA,NA
+"Oral Roberts","Oral Roberts","Summit","#002f60","#C5b783","#A28E2A",NA,NA,NA
+"Oregon","Oregon","Pac 12","#154733","#FEE123",NA,NA,NA,NA
+"Oregon St.","Oregon State","Pac 12","#dc4405","#000000","#ffffff",NA,NA,NA
+"Pacific","Pacific","WCC","#E35205","#231f20","#D86018","#949A90",NA,NA
+"Penn","Penn","Ivy","#990000","#011F5B",NA,NA,NA,NA
+"Penn St.","Penn State","Big 10","#093162","#FFFFFF",NA,NA,NA,NA
+"Pepperdine","Pepperdine","WCC","#00205c","#ee7624",NA,NA,NA,NA
+"Pittsburgh","Pitt","ACC","#1c2957","#cdb87d",NA,NA,NA,NA
+"Portland","Portland","WCC","#1e1656","#5e6A71",NA,NA,NA,NA
+"Portland St.","Portland State","Big Sky","#FFF","#A5ACAF","#373A36","#2C2A29","src=""da",NA
+"Princeton","Princeton","Ivy","#FF671F","#000000",NA,NA,NA,NA
+"Providence","Providence","Big East","#8a8d8f",NA,NA,NA,NA,NA
+"Purdue","Purdue","Big 10","#ceb888",NA,NA,NA,NA,NA
+"Purdue Fort Wayne","Fort Wayne","Summit","#002F6C","#000000","#63666A","#97999B","#BBBCBC",NA
+"Rhode Island","URI","A-10","#68abe8","#002147",NA,NA,NA,NA
+"Rice","Rice","C-USA","#00205B","src=""da",NA,NA,NA,NA
+"Richmond","Richmond","A-10","#000066","#990000",NA,NA,NA,NA
+"Rider","Rider","MAAC","#981E32","#6C6F70",NA,NA,NA,NA
+"Rutgers","Rutgers","Big 10","#cc0033",NA,NA,NA,NA,NA
+"Sacramento St.","Sacramento St","Big Sky","#c4b581","src=""da",NA,NA,NA,NA
+"Saint Joseph's","Saint Joe's","A-10","#9e1b32","#6c6f70",NA,NA,NA,NA
+"Saint Louis","Saint Louis","A-10","#003DA5","#C8C9C7",NA,NA,NA,NA
+"Saint Mary's (CA)","Saint Mary's","WCC","#D80024","#06315B",NA,NA,NA,NA
+"Saint Peter's","St Peter's","MAAC","#003C71","#0072CE","#A59C94","#000000",NA,NA
+"San Diego","San Diego","WCC","#002868","#84bce8","#207bc1",NA,NA,NA
+"San Diego St.","San Diego State","MWC","#a6192e","#000000","#FFFFFF",NA,NA,NA
+"San Francisco","San Francisco","WCC","#FDBB30","#00543C","#919194",NA,NA,NA
+"San Jose St.","San Jose State","MWC","#0055A2","#E5A823","#939597",NA,NA,NA
+"Santa Clara","Santa Clara","WCC","#862633",NA,NA,NA,NA,NA
+"Seattle U","Seattle","WAC","#AA0000","#333333",NA,NA,NA,NA
+"Seton Hall","Seton Hall","Big East","#004488","#A2AAAD",NA,NA,NA,NA
+"Siena","Siena","MAAC","#FFC72C","#C8102E","#006747","#693F23",NA,NA
+"South Alabama","South Alabama","Sunbelt","#00205B","#BF0D3E",NA,NA,NA,NA
+"South Carolina","South Carolina","SEC","#73000A","#000000",NA,NA,NA,NA
+"South Dakota","South Dakota","Summit","#ad0000","#b4b4b4","#000000",NA,NA,NA
+"South Dakota St.","South Dakota St","Summit","#0033A0","#FFD100",NA,NA,NA,NA
+"South Fla.","USF","AAC","#006747","#CFC493",NA,NA,NA,NA
+"Southern California","USC","Pac 12","#FFC72C",NA,NA,NA,NA,NA
+"Southern Ill.","S Illinois","MVC","#720000","#000000",NA,NA,NA,NA
+"Southern Miss.","Southern Miss","C-USA","#000000","#FFAB00",NA,NA,NA,NA
+"Southern Utah","Southern Utah","Big Sky","#000","#FFF","src=""da",NA,NA,NA
+"St. Bonaventure","St Bonaventure","A-10","#54261a","#fdb726","#bdb6b0",NA,NA,NA
+"St. John's (NY)","St John's","Big East","#BA0C2F","#041C2C","#A7A8AA",NA,NA,NA
+"Stanford","Stanford","Pac 12","#8C1515","#4D4F53","#2e2d29","#007662",NA,NA
+"Stetson","Stetson","ASun","#006747","#B58150","#9E652E","#000000",NA,NA
+"Stony Brook","Stony Brook","Am. East","#990000","#16243e","#828282",NA,NA,NA
+"Syracuse","Syracuse","ACC","#D44500","#3e3d3c","#6f777d","#adb3b8","#3e3d3c","#0D1D37"
+"TCU","TCU","Big 12","#4d1979","#a3a9ac","#FFFFFF",NA,NA,NA
+"Temple","Temple","AAC","#9D2235","#FFCD00","#8A8D8F","#C1C6C8","#000000",NA
+"Tennessee","Tennessee","SEC","#FF8200","#58595b","#FFFFFF",NA,NA,NA
+"Texas","Texas","Big 12","#bf5700","#333f48","#FFFFFF",NA,NA,NA
+"Texas A&M","Texas A&M","SEC","#500000","#FFFFFF",NA,NA,NA,NA
+"Texas St.","Texas State","Sunbelt","#501214","#8d734a",NA,NA,NA,NA
+"Texas Tech","Texas Tech","Big 12","#CC0000","#000000","#FFFFFF",NA,NA,NA
+"Toledo","Toledo","MAC","#15397F","#005CB9","#FFDA00","#BEC6C3","#A0ACAA","#000000"
+"Tulane","Tulane","AAC","#006747","#43B02A","#418FDE","#000000",NA,NA
+"Tulsa","Tulsa","AAC","#002D72","#C8102E","#C5B783","#F3D54E","#84754E",NA
+"UAB","UAB","C-USA","#CC8A00","#CC8A00","#000000","#BF0D3E",NA,NA
+"UC Davis","UC Davis","Big West","#002855","#B3A369",NA,NA,NA,NA
+"UC Irvine","UC Irvine","Big West","#0C2340","#FFC72C",NA,NA,NA,NA
+"UC Riverside","UC Riverside","Big West","#2D6CC0","#003066","#F1AB00","#7A6E67","#000000",NA
+"UCLA","UCLA","Pac 12","#f2a900","#FFE800",NA,NA,NA,NA
+"UIC","UIC","Horizon","#ac1e2d","#041E42","#facc09",NA,NA,NA
+"UMass Lowell","UMass Lowell","Am. East","#003DA5","#C8102E",NA,NA,NA,NA
+"UMBC","UMBC","Am. East","#b18906","#ffc20e","#000000","#ed1c24",NA,NA
+"UMKC","UMKC","WAC","#005293","#fecb00","#000000","#dcddde",NA,NA
+"UNI","Northern Iowa","MVC","#4B116F","#FFCC00",NA,NA,NA,NA
+"UNLV","UNLV","MWC","#b10202","#666666","#000000",NA,NA,NA
+"USC Upstate","USC Upstate","ASun","#00703c","#000000",NA,NA,NA,NA
+"UT Arlington","UT Arlington","Sunbelt","#f58025","#0064b1",NA,NA,NA,NA
+"Utah","Utah","Pac 12","#CC0000","#808080","#000000",NA,NA,NA
+"Utah St.","Utah State","MWC","#0F2439","#FFFFFF","#9d968d","#000000",NA,NA
+"Utah Valley","Utah Valley","WAC","#275d38","#000000","#8e8c89",NA,NA,NA
+"UTEP","UTEP","C-USA","#041E42","#041E42","#B1B3B3",NA,NA,NA
+"UTRGV","UT Rio Grande","WAC","#FFA300","#f05023","#00843D","#0C2340",NA,NA
+"UTSA","UTSA","C-USA","#0C2340","#0C2340",NA,NA,NA,NA
+"Valparaiso","Valparaiso","MVC","#381e0e","#613318","#ffcc00",NA,NA,NA
+"Vanderbilt","Vanderbilt","SEC","#000000","#866d4b",NA,NA,NA,NA
+"VCU","VCU","A-10","#ffb300","#000000",NA,NA,NA,NA
+"Vermont","Vermont","Am. East","#154734","#8B5B29","#FFC72C","#C6AA76","#FF6A13","#000000"
+"Villanova","Villanova","Big East","#00205b","#13b5ea","#8B634B",NA,NA,NA
+"Virginia","UVA","ACC","#232D4B","#F84C1E","#FFFFFF",NA,NA,NA
+"Virginia Tech","Virginia Tech","ACC","#630031","#cf4420",NA,NA,NA,NA
+"Wake Forest","Wake Forest","ACC","#a67f31","#000000",NA,NA,NA,NA
+"Washington","Washington","Pac 12","#4B2E83","#b7a57a","#85754d",NA,NA,NA
+"Washington St.","Washington St","Pac 12","#981E32",NA,NA,NA,NA,NA
+"Weber St.","Weber State","Big Sky","#a1a1a4","#130c0e","!import",NA,NA,NA
+"West Virginia","West Virginia","Big 12","#002855","#EAAA00",NA,NA,NA,NA
+"Western Ill.","W Illinois","Summit","#663399","#ffcc00",NA,NA,NA,NA
+"Western Ky.","W Kentucky","C-USA","#c60c30","#1E1E1E","#A2A4A3",NA,NA,NA
+"Western Mich.","W Michigan","MAC","#6C4023","#B5A167","#AAA8AA","#000000",NA,NA
+"Wichita St.","Wichita State","AAC","#FFCD00",NA,NA,NA,NA,NA
+"Wisconsin","Wisconsin","Big 10","#c5050c","#9b0000",NA,NA,NA,NA
+"Wright St.","Wright State","Horizon","#026937","#CEA052","#FFE1A5","#DE6328",NA,NA
+"Wyoming","Wyoming","MWC","#ffc425","#492f24",NA,NA,NA,NA
+"Xavier","Xavier","Big East","#0C2340","#9EA2A2","#0099CC",NA,NA,NA
+"Yale","Yale","Ivy","#00356b",NA,NA,NA,NA,NA
+"Youngstown St.","Youngstown St","Horizon","#C8102E","#F3D54E",NA,NA,NA,NA
