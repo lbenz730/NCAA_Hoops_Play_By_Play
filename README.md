@@ -54,6 +54,10 @@ __shiny_app:/__ Code for the [R Shiny App version of Assist Networks](https://lb
 
 __network_metric_leaders.R:__ A script for computing weighted/unweighted assist network metrics for all 351 Division 1 teams. The mid-season leaderboad for the 2017-18 season is stored in __1_2_2018_assist_leaderboard.csv__. 
 
+__kenpom_scraper.R:__ Scrapes data from [kenpom.com](https://kenpom.com) main page and store results in __kenpom.csv__.
+
+__ncaa_color_scraper.R:__ Scrapes color hexcodes from http://teamcolorcodes.com for use in the [ncaahoopR](https://github.com/lbenz730/ncaahoopR) package.
+
 # Examples
 ### Assist Networks
 * Weighted Assist Network
