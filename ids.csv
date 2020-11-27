@@ -19,9 +19,11 @@ Auburn,2,auburn-tigers
 Austin Peay,2046,austin-peay-governors
 Ball State,2050,ball-state-cardinals
 Baylor,239,baylor-bears
+Bellarmine,91,bellarmine-knights
 Belmont,2057,belmont-bruins
 Bethune-Cookman,2065,bethune-cookman-wildcats
 Binghamton,2066,binghamton-bearcats
+Birmingham-Southern,3,
 Boise State,68,boise-state-broncos
 Boston College,103,boston-college-eagles
 Boston U,104,boston-univ-terriers
@@ -42,6 +44,7 @@ Canisius,2099,canisius-golden-griffins
 Cent Arkansas,2110,central-arkansas-bears
 Cent Conn St,2115,central-connecticut-st-blue-devils
 Cent Michigan,2117,central-michigan-chippewas
+Centenary,2113,
 Charleston,232,charleston-cougars
 Charleston So,2127,charleston-southern-buccaneers
 Charlotte,2429,charlotte-49ers
@@ -68,6 +71,7 @@ Delaware State,2169,delaware-st-hornets
 Denver,2172,denver-pioneers
 DePaul,305,depaul-blue-demons
 Detroit Mercy,2174,detroit-mercy-titans
+Dixie State,3101,dixie-state-trailblazers
 Drake,2181,drake-bulldogs
 Drexel,2182,drexel-dragons
 Duke,150,duke-blue-devils
@@ -178,6 +182,7 @@ Montana,149,montana-grizzlies
 Montana State,147,montana-st-bobcats
 Morehead State,2413,morehead-st-eagles
 Morgan State,2415,morgan-st-bears
+Morris Brown,2417,
 Mt St Mary's,116,mt-st-marys-mountaineers
 Murray State,93,murray-st-racers
 N Arizona,2464,northern-arizona-lumberjacks
@@ -251,6 +256,7 @@ San Diego State,21,san-diego-st-aztecs
 San Francisco,2539,san-francisco-dons
 San Jose State,23,san-jose-st-spartans
 Santa Clara,2541,santa-clara-broncos
+Savannah St,2542,
 SE Louisiana,2545,se-louisiana-lions
 SE Missouri St,2546,se-missouri-st-redhawks
 Seattle,2547,seattle-redhawks
@@ -275,6 +281,7 @@ Stanford,24,stanford-cardinal
 Stetson,56,stetson-hatters
 Stony Brook,2619,stony-brook-seawolves
 Syracuse,183,syracuse-orange
+Tarleton,2627,tarleton-texans
 TCU,2628,tcu-horned-frogs
 Temple,218,temple-owls
 Tenn Tech,2635,tennessee-tech-golden-eagles
@@ -296,6 +303,7 @@ UAB,5,uab-blazers
 UC Davis,302,uc-davis-aggies
 UC Irvine,300,uc-irvine-anteaters
 UC Riverside,27,uc-riverside-highlanders
+UC San Diego,28,uc-san-diego-tritons
 UCF,2116,ucf-knights
 UCLA,26,ucla-bruins
 UConn,41,uconn-huskies
